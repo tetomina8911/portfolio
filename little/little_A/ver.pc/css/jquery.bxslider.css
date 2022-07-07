@@ -1,0 +1,220 @@
+/** VARIABLES
+===================================*/
+/** RESET AND LAYOUT
+===================================*/
+.bx-wrapper {
+  position: relative;
+  margin-bottom: 72px;
+  padding: 0 0 72px;
+  *zoom: 1;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+}
+.bx-wrapper img {
+  max-width: 100%;
+  display: block;
+}
+.bxslider {
+  margin: 0;
+  padding: 0;
+}
+ul.bxslider {
+  list-style: none;
+}
+.bx-viewport {
+  /*fix other elements on the page moving (on Chrome)*/
+  -webkit-transform: translatez(0);
+}
+/** THEME
+===================================*/
+.bx-wrapper {
+  -moz-box-shadow: 0 0 0px #ccc;
+  -webkit-box-shadow: 0 0 0px #ccc;
+  box-shadow: 0 0 0px #ccc;
+  border: 0px solid #fff;
+  background: none;
+}
+.bx-wrapper .bx-controls-auto {
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+}
+/* LOADER */
+.bx-wrapper .bx-loading {
+  min-height: 50px;
+  background: url('images/bx_loader.gif') center center no-repeat #ffffff;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+}
+/* PAGER */
+.bx-wrapper .bx-pager {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: .85em;
+  font-family: Arial;
+  font-weight: bold;
+  color: #666;
+  padding-top: 0;
+}
+.bx-wrapper .bx-pager.bx-default-pager a {
+  position:relative;
+  background:none;
+  text-indent: 0;
+  display: inline-block;
+  width: 240px;
+  height: 4px;
+  margin: 0 0;
+  outline: 0;
+  border-bottom:1px solid #ddd;
+}
+.bx-wrapper .bx-pager.bx-default-pager a.active {
+  background:none;
+}
+.bx-wrapper .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+  display: inline-block;
+  vertical-align: bottom;
+  *zoom: 1;
+  *display: inline;
+}
+.bx-wrapper .bx-pager-item {
+  display:inline-block;
+  width:240px;
+  height:4px;
+  font-size:0;
+}
+
+
+/* 펜 애니메이션 기능 */
+.bx-wrapper .bx-pager.bx-default-pager a:before { position:absolute; left:0; bottom:0; display:block; width:240px; height:72px; line-height:72px; padding-left:12px; font-size:17px; color:#aaa; text-align:left; font-family: 'NanumSquare', sans-serif !important; box-sizing:border-box; }
+
+.bx-wrapper .bx-pager .bx-pager-item:nth-child(1) a:before { content:'리틀천재'; }
+.bx-wrapper .bx-pager .bx-pager-item:nth-child(2) a:before { content:'구매고객 감사이벤트'; }
+.bx-wrapper .bx-pager .bx-pager-item:nth-child(3) a:before { content:'온라인특가전'; }
+.bx-wrapper .bx-pager .bx-pager-item:nth-child(4) a:before { content:'프리미엄 돌잡이 홈쇼핑'; }
+.bx-wrapper .bx-pager .bx-pager-item:nth-child(5) a:before { content:'월간우등학습 6월호'; }
+
+.bx-wrapper .bx-pager.bx-default-pager a.active:before { color:#da2f21; animation:pen 1s 0s 1 forwards; }
+@keyframes pen{
+  0% { background:url('../images/icon_pen.png') no-repeat 0px bottom; }
+  100% { background:url('../images/icon_pen.png') no-repeat 210px bottom; }
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a:after { content:'aaa'; position:absolute; display:block; left:0; top:0; width:0; height:4px; font-size:0; background:#da2f21; }
+
+.bx-wrapper .bx-pager.bx-default-pager a.active:after { animation:line 1s 0s 1 forwards; }
+@keyframes line{
+  100% { width:210px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DIRECTION CONTROLS (NEXT / PREV) */
+.bx-wrapper .bx-prev {
+  left: 10px;
+  background: url('images/controls.png') no-repeat 0 -32px;
+}
+.bx-wrapper .bx-prev:hover,
+.bx-wrapper .bx-prev:focus {
+  background-position: 0 0;
+}
+.bx-wrapper .bx-next {
+  right: 10px;
+  background: url('images/controls.png') no-repeat -43px -32px;
+}
+.bx-wrapper .bx-next:hover,
+.bx-wrapper .bx-next:focus {
+  background-position: -43px 0;
+}
+.bx-wrapper .bx-controls-direction a {
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  outline: 0;
+  width: 32px;
+  height: 32px;
+  text-indent: -9999px;
+  z-index: 9999;
+}
+.bx-wrapper .bx-controls-direction a.disabled {
+  display: none;
+}
+/* AUTO CONTROLS (START / STOP) */
+.bx-wrapper .bx-controls-auto {
+  text-align: center;
+}
+.bx-wrapper .bx-controls-auto .bx-start {
+  display: block;
+  text-indent: -9999px;
+  width: 10px;
+  height: 11px;
+  outline: 0;
+  background: url('images/controls.png') -86px -11px no-repeat;
+  margin: 0 3px;
+}
+.bx-wrapper .bx-controls-auto .bx-start:hover,
+.bx-wrapper .bx-controls-auto .bx-start.active,
+.bx-wrapper .bx-controls-auto .bx-start:focus {
+  background-position: -86px 0;
+}
+.bx-wrapper .bx-controls-auto .bx-stop {
+  display: block;
+  text-indent: -9999px;
+  width: 9px;
+  height: 11px;
+  outline: 0;
+  background: url('images/controls.png') -86px -44px no-repeat;
+  margin: 0 3px;
+}
+.bx-wrapper .bx-controls-auto .bx-stop:hover,
+.bx-wrapper .bx-controls-auto .bx-stop.active,
+.bx-wrapper .bx-controls-auto .bx-stop:focus {
+  background-position: -86px -33px;
+}
+/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+  text-align: left;
+  width: 80%;
+}
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
+  right: 0;
+  width: 35px;
+}
+/* IMAGE CAPTIONS */
+.bx-wrapper .bx-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #666;
+  background: rgba(80, 80, 80, 0.75);
+  width: 100%;
+}
+.bx-wrapper .bx-caption span {
+  color: #fff;
+  font-family: Arial;
+  display: block;
+  font-size: .85em;
+  padding: 10px;
+}

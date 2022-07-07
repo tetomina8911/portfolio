@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+
+#pc_wrap { position:relative; display:block; width:100%; height:100%; background: url('./images/bg.jpg') no-repeat 50% center, #f4f4f4; overflow:hidden; }
+
+.inner { position:absolute; left:0; bottom:50px; display:block; width:100%; text-align:center; }
+.contents ul li { display:inline-block; margin:0 10px; box-shadow: 30px 30px 100px #bbb; }
+
+#mb_wrap { display:none; }
+
+
+@media screen and (max-width:720px) {
+
+    #pc_wrap { display:none; }
+    
+    #mb_wrap { display:block; width:100%; height:100%; background:#f4f4f4; }
+
+}       

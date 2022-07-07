@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+#wrap { position:relative; display:block; width:100%; height:100%; }
+
+/* Header */
+#header { position:fixed; left:0; top:0; display:block; width:100px; height:100%; background: #fff; z-index:100; }
+#logo { display:block; }
+
+#header .btn_gnb { position:absolute; left:0; top:50%; display:block; margin-top:-50px; }
+
+#header .shorcut_area { position:absolute; left:0; bottom:65px; display:block; }
+#header .shorcut_area li { position:relative; display:block; width:196px; }
+#header .shorcut_area li a { display:block; width:100px; }
+#header .shorcut_area li .balloon { position:absolute; display:none; right:0; top:0; }
+
+
+#header .btn_close { position:absolute; left:0; top:50%; display:none; margin-top:-50px; }
+
+#gnb_area { position:absolute; left:100px; top:0; display:none; z-index:101; }
+
+#gn_bg { position:absolute; left:0; top:0; display:none; width:100%; height:100%; background: rgba(0,0,0,0.34); z-index:99; }
+
+
+/* swiper-wrapper */
+.swiper-container { width:100%; height:100%; }
+.swiper-container .swiper-slide > img { width:100%; }
+
+.swiper-container .swiper-slide1 { overflow:hidden; }
+.swiper-container .swiper-slide1 .inquiry_box { position:absolute; display:block; width:760px; height:100%; right:-460px; top:0; padding-left:60px; transition:all .5s; cursor:pointer; z-index:100; background: url('../images/inquiry_bg.jpg') no-repeat right center; }
+.swiper-container .swiper-slide1 .inquiry_box .in_order { display:none; }
+
+.swiper-container .swiper-slide1 .inquiry_box:hover { right:0; padding-left:0; }
+.swiper-container .swiper-slide1 .inquiry_box .effect_right { position:absolute; display:block; left:0; top:50%; margin-top:-32px; z-index:200; 
+    animation:effect 1s ease infinite;  }
+    
+@keyframes effect {
+    50% { left:-30px; }
+    100% { left:0; }
+
+}
+
+
+/* */
+.swiper-container .swiper-slide4 .rolling_area { position:absolute; display:block; right:0; top:0; overflow-y:auto; }
+
+
+.swiper-container .swiper-slide4 .effect_area { position:absolute; display:block; right:50px; bottom:50%; margin-top:0; z-index:101; }
+.swiper-container .swiper-slide4 .effect_area .btn_up { display:block; }
+.swiper-container .swiper-slide4 .effect_area .btn_down { display:block; margin-top:30px; }
+
+
+/* Controls */
+.btn_controls { position:absolute; left:50%; top:87%; display:block; margin-left:30px; z-index:7; }
+.btn_controls.active { display:none; }
+
+
+
+@media screen and (max-width:1600px) {
+    #gnb_area { width:542px; }
+
+    .swiper-container .swiper-slide1 .inquiry_box { width:634px; background-size:634px auto; }
+
+
+
+}

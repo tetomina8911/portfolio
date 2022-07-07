@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>이은영의 포트폴리오</title>
+
+        <link rel="stylesheet" href="./css/resset.css">
+        <link rel="stylesheet" href="./css/layout.css">
+
+        <!-- font-family: 'Nanum Square'; -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+
+        <!-- js -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="./js/index.js"></script>
+
+    </head>
+    <body>
+        <div id="wrap">
+            <!-- header -->
+            <header id="header">
+                <h1 id="logo"><a href="#n">EUN YOUNG's Portfolio</a></h1>
+                <nav class="gn">
+                    <ul>
+                        <li><a href="./index.html">Portfolio</a></li>    
+                        <li><a href="./about.html">About</a></li>                    
+                    </ul>
+                </nav>
+                <footer>
+                    <div class="info">
+                        <p>T _ 010-5434-8911</p>
+                        <p>E _ tetomina89@naver.com</p>
+                    </div>
+                    <address> ⓒ 2017. EUNYOUNG LEE All Right Reserved</address>
+                </footer>
+                <a href="#n" class="btn_menu" title="click Me">♥</a>
+            </header>
+
+
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $('#btn_layer').click(function(){
+                        $('#layer_container').stop().fadeIn();
+                        $('#layer_bg').stop().fadeIn();
+                        $('body').addClass('hidden');
+                        $('html').addClass('hidden');
+                    });
+                    
+                    $('#layer_bg').click(function(){
+                        $('#layer_container').stop().fadeOut();
+                        $('#layer_bg').stop().fadeOut();
+                        $('body').removeClass('hidden');
+                        $('html').removeClass('hidden');
+                    });
+                });
+            </script>
+        
+
+            <!-- body -->
+            <section id="body">
+                <!-- 포트폴리오 -->
+                <article class="portfolio_container">
+                    <div class="body_title">★ portfolio</div>
+                    <ul>
+                        <li><img src="./images/diocian.jpg" alt="">
+                        <a href="https://www.diocian.com/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">(주)디오션</p>
+                                <p class="det">PC 유동형</p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/insight_01.jpg" alt="">
+                        <a href="#n" class="hover_bg" id="btn_layer">
+                            <div>
+                                <p class="tit">(주)데이터인사이트</p>
+                                <p class="det">반응형</p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/suprema.jpg" alt="">
+                        <a href="https://www.supremainc.com/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">(주)슈프리마</p>
+                                <p class="det">반응형</p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/lguplus.jpg" alt="">
+                        <a href="#n" class="hover_bg" id="btn_layer">
+                            <div>
+                                <p class="tit">LG 유플러스 모바일</p>
+                                <p class="det">모바일</p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/bnbit_a.jpg" alt="">
+                        <a href="./bnbit/d_A/A_pc.html" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">비앤빛강남안과 - A안</p>
+                                <p class="det">PC 제안 / Parallax</p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/bnbit_b.jpg" alt="">
+                        <a href="./bnbit/d_B/B_pc.html" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">비앤빛강남안과 - B안</p>
+                                <p class="det">PC 제안 / 가로형 Slider</p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/little_a.jpg" alt="">
+                        <a href="./little/little_A/ver.pc/A_little_pc.html" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">천재교육 리틀천재 - A안</p>
+                                <p class="det">PC 제안</p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/little_b.jpg" alt="">
+                        <a href="./little/little_B/ver.pc/B_little_pc.html" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">천재교육 리틀천재 - B안</p>
+                                <p class="det">PC 제안 / Parallax</p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/dubal.jpg" alt="">
+                        <a href="http://duubal.com/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">(주)듀발</p>
+                                <p class="det">반응형</p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/medicube.jpg" alt="">
+                        <a href="https://themedicube.co.kr/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">메디큐브</p>
+                                <p class="det">반응형</p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/rymd.jpg" alt="">
+                        <a href="http://rymds.com/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">RYMD</p>
+                                <p class="det">반응형</p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/sdca.jpg" alt="">
+                        <a href="http://sdca.co.kr/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">서울디자인크래프트 협회</p>
+                                <p class="det">반응형</p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/wooyang.jpg" alt="">
+                        <a href="http://www.wyconveyor.com/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">(주)우양정공</p>
+                                <p class="det">반응형</p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/noble.jpg" alt="">
+                        <a href="http://www.nobleholdings.co.kr/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">(주)노블홀딩스</p>
+                                <p class="det">PC 유동형</p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/idp.jpg" alt="" />
+                        <a href="http://www.idp-corp.com/index/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">(주)아이디피</p>
+                                <p class="det">반응형 </p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/suri.jpg" alt="" />
+                        <a href="http://www.asrc.or.kr/index/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">안양시수리장애인종합복지관</p>
+                                <p class="det">웹접근성 </p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/phc.jpg" alt="" />
+                        <a href="http://www.ph.co.kr/kor/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">(주)평화홀딩스</p>
+                                <p class="det">ie8 맞춤 제작, Mobile 및 다국어 </p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/bebrig.jpg" alt="" />
+                        <a href="http://www.worldbebridge.co.kr/index/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">(주)월드베브릿지</p>
+                                <p class="det">PC 이미지형 </p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/klueber.jpg" alt="" />
+                        <a href="http://www.klueber.co.kr/index/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">(주)크리버코리아</p>
+                                <p class="det">PC, Mobile 제작</p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/gskh.jpg" alt="" />
+                        <a href="https://gskh.khu.ac.kr/index/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">경희대학교 대학원</p>
+                                <p class="det">반응형 </p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/gskh2.jpg" alt="" />
+                        <a href="http://khcns21.khu.ac.kr/index/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">경희대학교 간호학과</p>
+                                <p class="det">반응형 </p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/billking.jpg" alt="" />
+                        <a href="http://www.billking.co.kr/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">빌킹코리아</p>
+                                <p class="det">pc, mobile 쇼핑몰</p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/idream.jpg" alt="" />
+                        <a href="http://idreamcounseling.com/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">아이드림심리상담센터</p>
+                                <p class="det">PC, Mobile형 다국어 </p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/leewonhee.jpg" alt="" />
+                        <a href="http://www.leeeye.co.kr/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">이원희안과의원</p>
+                                <p class="det">PC형 쇼핑몰</p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/tankyou.jpg" alt="" />
+                        <a href="http://www.thanqshop.com/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">땡큐샵</p>
+                                <p class="det">PC형 쇼핑몰</p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/leeve.jpg" alt="" />
+                        <a href="http://leeve.co.kr/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">리베</p>
+                                <p class="det">PC형 쇼핑몰</p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/songa.jpg" alt="" />
+                        <a href="http://songhousing.com/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">송가네 집공장</p>
+                                <p class="det">PC형 </p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/jungang.jpg" alt="" />
+                        <a href="http://jamedical.co.kr/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">중앙의료기</p>
+                                <p class="det">PC형 </p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/netinfo.jpg" alt="" />
+                        <a href="http://www.netinfocctv.com/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">넷인포</p>
+                                <p class="det">PC형 다국어 </p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/dukin.jpg" alt="" />
+                        <a href="http://www.dimetal.co.kr/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">(주)덕인금속</p>
+                                <p class="det">PC형 다국어 </p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/dongkwang.jpg" alt="" />
+                        <a href="http://www.dket.co.kr/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">동광전자(주)</p>
+                                <p class="det">PC형 </p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/dongbin.jpg" alt="" />
+                        <a href="http://dongbin.kr/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">동빈무역</p>
+                                <p class="det">PC형 다국어 </p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/dooart.jpg" alt="" />
+                        <a href="http://www.pcbart.kr/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">주식회사 두아트</p>
+                                <p class="det">PC형 다국어 </p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/winasia.jpg" alt="" />
+                        <a href="http://www.winasialaw.com/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">득아법률사무소</p>
+                                <p class="det">PC형 다국어 </p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/dpsys.jpg" alt="" />
+                        <a href="http://www.depsys.co.kr/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">디피시스</p>
+                                <p class="det">PC형 </p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/gana.jpg" alt="" />
+                        <a href="http://www.ganatr.co.kr/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">가나공사</p>
+                                <p class="det">PC형 </p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/lifecord.jpg" alt="" />
+                        <a href="http://www.lifecord.co.kr/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">라이프코드</p>
+                                <p class="det">PC형 다국어 </p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/reochem.jpg" alt="" />
+                        <a href="http://leochem.inpiad.net/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">레오켐</p>
+                                <p class="det">PC형 다국어 </p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/metalink.jpg" alt="" />
+                        <a href="http://www.emetallink.com/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">메탈링크</p>
+                                <p class="det">PC형 </p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/metalife.jpg" alt="" />
+                        <a href="http://www.metal-life.co.kr/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">메탈라이프</p>
+                                <p class="det">PC형 </p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/gstarcard.jpg" alt="" />
+                        <a href="http://www.gstarcad.co.kr/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">모두솔루션</p>
+                                <p class="det">PC형 </p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/moamom.jpg" alt="" />
+                        <a href="http://www.moamom.co.kr/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">모아맘 보육재단</p>
+                                <p class="det">PC, Mobile형 다국어 </p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/enerheim.jpg" alt="" />
+                        <a href="http://www.enerheim.com/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">ENERHEIM</p>
+                                <p class="det">PC형 다국어 </p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/ander.jpg" alt="" />
+                        <a href="http://www.andersonlife.co.kr/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">안데르손</p>
+                                <p class="det">PC형 다국어 </p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                        <li><img src="./images/yeonil.jpg" alt="" />
+                        <a href="http://yeonilhp.co.kr/" target="_blank" class="hover_bg">
+                            <div>
+                                <p class="tit">연일병원</p>
+                                <p class="det">PC형</p>
+                                <p class="more">View +</p>
+                            </div>
+                        </a></li>
+                    </ul>
+                </article>
+            </section>
+
+            <section id="layer_container">
+                <div class="layer_datainsight">
+                    <img src="./images/insight_02.jpg" alt="">
+                </div>
+            </section>
+
+            <article id="layer_bg"></article>
+        </div>
+    </body>
+</html>

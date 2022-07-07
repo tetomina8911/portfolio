@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <link rel="stylesheet" href="./css/resset.css">
+        <link rel="stylesheet" href="./css/layout_sub.css">
+
+
+        <!-- 폰트 font-family: 'Nanum Square'; -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+        <title>리틀천재 B_ver.pc_sub_list</title>
+    </head>
+    <body>
+        <div id="wrap">
+            <header id="header">
+                <h1 id="logo"><a href="./B_little_pc.html"><img src="./images_sub/logo.jpg" alt="" /></a></h1>
+                <nav id="gnb">
+                    <a href="#n"><img src="./images_sub/gnb.jpg" alt="" /></a>
+                </nav>
+                <div class="top_area">
+                    <a href="#n"><img src="./images_sub/top_nav.jpg" alt="" /></a>
+                </div>
+            </header>
+            <section id="sub_visual">
+                <div class="s_visual_area"><img src="./images_sub/sub_visual.jpg" alt="" /></div>
+            </section>
+            <section id="sbody">
+                <div id="ln_area">
+                    <ul class="ln">
+                        <li class="nabel"><a href="#n"><img src="./images_sub/icon_home.gif" alt="" /></a></li>
+                        <li class="nabel"><a href="#n">교재소개</a>
+                            <ul class="sln">
+                                <li><a href="#n">- 교재소개</a></li>
+                                <li><a href="#n">- 놀이학습</a></li>
+                                <li><a href="#n">- 이벤트</a></li>
+                                <li><a href="#n">- 커뮤니티</a></li>
+                            </ul>
+                        </li>
+                        <li class="nabel"><a href="#n">돌잡이 시리즈</a>
+                            <ul class="sln">
+                                <li><a href="./B_little_pc_sub.html">- 돌잡이 풀패키지</a></li>
+                                <li><a href="#n">- 돌잡이 수학</a></li>
+                                <li><a href="#n">- 돌잡이 한글</a></li>
+                                <li><a href="#n">- 돌잡이 영어</a></li>
+                                <li><a href="#n">- 돌잡이 명화</a></li>
+                            </ul>
+                        </li>
+                        <script type="text/javascript">
+                            $(function(){
+                                $('#ln_area .ln > li').hover(function(){
+                                    $(this).children('.sln').stop().slideToggle();
+                                });
+                            });
+                        </script>
+                    </ul>
+                </div>
+                <div id="content_02">
+                    <img src="./images_sub/content3.jpg" alt="" usemap="#go_sub" />
+                    <map name="go_sub" id="go_sub">
+                        <area shape="rect" coords="0,203,384,587" href="./B_little_pc_sub.html" alt="" />
+                    </map>
+                </div>                   
+            </section>
+            <footer id="footer">
+                <div class="foot_01"><a href="#n"><img src="./images_sub/foot_03.jpg" alt="" /></a></div>
+                <div class="foot_02"><img src="./images_sub/foot_02.jpg" alt="" /></div>
+            </footer>
+        </div>
+    </body>
+</html>
