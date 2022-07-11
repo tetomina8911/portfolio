@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+
+/* basic */
+* { margin:0; padding:0; font-family: 'Noto Sans KR', sans-serif; }
+html { overflow-y:scroll; }
+html, body { width:100%; height:100%; overflow: hidden; }
+body { margin:0; padding:0; font-size:1em; font-family: 'Noto Sans KR', sans-serif; }
+
+html, h1, h2, h3, h4, h5, h6, form, fieldset, img { margin:0; padding:0; border:0; }
+
+label, input, button, select { vertical-align:middle; }
+input, button { margin:0; padding:0; font-family: 'Noto Sans KR', sans-serif; font-size:1em; }
+button { cursor:pointer; }
+
+textarea, select { width:100%; box-sizing:border-box; }
+
+/* 제목태그설정 */
+h1, h2, h3, h4, h5, h6 { margin:0; padding:0; font-size:1em; font-family: 'Noto Sans KR', sans-serif; }
+
+/* 시멘틱태그설정 */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display:block; }
+
+/* 링크 */
+a:link, a:visited { color:#000; text-decoration:none; }
+a:hover, a:focus, a:active { color:#000; text-decoration:none; }
+
+
+input[type=checkbox] { display: none; }
+input[type=checkbox] + label { position: relative; display: block; font-size: 14px; font-style: normal; font-variant: normal; text-transform: none; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; cursor: pointer; }
+input[type=checkbox] + label:after { position: absolute; right: 0; top: 50%; font-size: 16px; font-family: 'boxicons'!important; font-weight: normal; color: #999; content: "\e9ad"; transform: translateY(-50%); }
+input[type=checkbox]:checked + label:after { font-size: 16px; color: #333399; content: "\ec8a"; }
+
+/* 기타설정 */
+img { max-width:100%; vertical-align:top; }
+ul, ol, li { list-style:none; margin:0; padding:0; }
+p { word-break:keep-all; }
+
+.hidden { overflow:hidden; }
+

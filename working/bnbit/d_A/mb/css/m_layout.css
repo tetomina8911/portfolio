@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+#wrap { position:relative; display:block; max-width:720px; width:100%; height:100%; margin:0 auto; }
+
+/* Header */
+#header { position:fixed; left:0; top:0; width:100%; z-index:100; border-bottom:1px solid rgba(255,255,255,0.5); }
+#header:after { display:block; content:''; clear:both; }
+#header #logo { display:block; float:left; width:40%; }
+#header .btn_menu { display:block; float:right; width:20%; height:50%; }
+#header .btn_menu_bl { display:none; }
+
+
+#header.white_bg { background:rgba(255,255,255,1); }
+
+#gnb_area { position:absolute; display:none; right:0; top:0; text-align:right; z-index:100; }
+#gnb_area .btn_close { display:block; }
+
+
+/* Body */
+.b_section { position:relative; display:block; }
+
+/* Swiper 영역 */
+.b_section01 .reserve_area { position:absolute; display:block; left:0; bottom:0; z-index:10; }
+
+.b_section01 .swiper-pagi { position:absolute; display:block; top:46%; width:100%; text-align:center; z-index:10; }
+.b_section01 .swiper-pagi span { display:inline-block; width:14px; height:17px; border-radius:0; background:url('../images/swiper-bullet.png') no-repeat left top; background-size:100% auto; opacity:1;  }
+
+.b_section01 .swiper-pagi .swiper-pagination-bullet-active { background-image:url('../images/swiper-bullet-on.png'); }
+
+
+
+/* 주요클리닉 */
+.b_section02 { background: #fafafa; }
+.b_section02 .swiper-container-02 { padding:0 0 170px; }
+.b_section02 .swiper-container-02 .swiper-slide { width:195px !important; }
+.b_section02 .swiper-container-02 .swiper-slide .on { display:none; }
+.b_section02 .swiper-container-02 .swiper-slide-active { width:253px !important; }
+.b_section02 .swiper-container-02 .swiper-slide p { position:relative; }
+.b_section02 .swiper-container-02 .swiper-slide p img { position:absolute; display:block; left:0; bottom:0; top:0; margin:auto 0; }
+.b_section02 .swiper-container-02 .swiper-slide .not_on { display:block; width:195px; height:311px; }
+.b_section02 .swiper-container-02 .swiper-slide-active .on { display:block; width:253px; height:311px; box-shadow:5px 5px 20px #bbb; }
+.b_section02 .swiper-container-02 .swiper-slide-active .not_on { display:none; }
+
+.b_section02 .swiper-controls { position:absolute; display:block; left:0; bottom:50px; width:100%; text-align:center;  }
+.b_section02 .swiper-controls a { display:inline-block; margin:0 10px; vertical-align: middle; outline:0; }
+.b_section02 .swiper-controls a.btn_prev { width:35px; }
+.b_section02 .swiper-controls a.btn_pause { width:70px; }
+.b_section02 .swiper-controls a.btn_play { display:none; width:70px; }
+.b_section02 .swiper-controls a.btn_next { width:35px; }
+
+
+
+/* 일반고객 체험기 */
+.b_section04 { padding:0 0 50px; }
+.b_section04 .x-scroll_list { display:block; margin:0 22px 25px; white-space:nowrap; overflow-x:scroll; }
+.b_section04 .x-scroll_list li { display:inline-block; line-height:30px; padding:10px 15px; }
+.b_section04 .x-scroll_list li a { display:block; font-size:1.07em; color:#aaa; }
+.b_section04 .x-scroll_list li.on a { color:#222; border-bottom:1px solid #222; }
+
+
+
+/* 비앤빛 소식.칼럼  */
+.b_section06 .tab_list { display:block; height:61px; margin:0 6%; padding:20px 0 0; white-space:nowrap; overflow-y:scroll; overflow-x:visible; box-sizing:border-box; }
+.b_section06 .tab_list:after { display:block; content:''; clear:both; }
+.b_section06 .tab_list li { position:relative; display:inline-block; height:39px; margin-right:-4px; }
+.b_section06 .tab_list li a { display:block; line-height:39px; padding:0 12px; letter-spacing:-0.05em; font-size:1.0625em; font-weight:600; color:#bbb; text-align:center; border-bottom:2px solid #ddd; }
+
+.b_section06 .tab_list li.on a { color:#01bbb6; border-color:#01bbb6; }
+
+.b_section06 .tab_list li:first-child a { padding-left:0px; margin-left:-1px; }
+.b_section06 .tab_list li:last-child a { padding-right:0; }
+
+.b_section06 .tab_box li { display:none; }
+.b_section06 .tab_box li:first-child { display:block; }
+
+
+/* */
+#footer { position:relative; }
+
+
+/* 하단 quick 고정 */
+#fix_quick { position:fixed; left:0; bottom:0; width:100%; z-index:100; }
+#fix_quick ul { display:block; }
+#fix_quick ul:after { display:block; content:''; clear:both; }
+#fix_quick ul li { display:block; float:left; width:20%; }
+#fix_quick ul li a { display:block; }
+
+
+/* 상단 문의하기 quick 고정 */
+#btn_inquiry { position:absolute; display:block; right:2%; width:22%; bottom:459px; z-index:99; }

@@ -1,0 +1,51 @@
+/* 전체 설정 : 공통 */
+#wrap { position:relative; display:block; width:100%; height:100%; text-align:center;  box-sizing:border-box; }
+
+#header { position:relative; display:block; width:100%; height:100px; }
+#logo { position:absolute; left:0; top:0; display:block; z-index:10; }
+
+#gnb { display:block; }
+.top_area { position:absolute; right:0; top:0; display:block; z-index:10; }
+
+#content_02 { display:block; width:100%; background: #f5f5f5;}
+
+#footer { display:block; }
+#footer .foot_02 { display:block; width:100%; border-top:1px solid #ddd; }
+
+/* Sub */
+#main_visual { position:relative; display:block; width:100%; text-align:center; background: #4d89ff; overflow:hidden; }
+#main_visual .monkey { position:absolute; display:block; left:50%; bottom:-120px; z-index:7; }
+
+#main_visual .go_saypen { position:absolute; left:50%; top:-7px; margin-left:392px; z-index:10; 
+    animation:go_saypen 2s infinite; transform-origin:center top; }
+
+@keyframes go_saypen {
+    0% { transform:rotate(15deg);  }
+    50% { transform:rotate(-15deg);  }
+    100% { transform:rotate(15deg);  }
+}
+
+
+/* Sub_list */
+#sub_visual { position:relative; display:block; width:100%; background:#11a4a0; }
+
+#ln_area { display:block; width:100%; background:url('../images_sub/line_bg.gif') repeat-x; }
+#ln_area:after { display:block; content:''; clear:both; }
+#ln_area .ln { display:block; max-width:1200px; height:60px; margin:0 auto; border-left:1px solid #e8e8e8; border-right:1px solid #e8e8e8; box-sizing:border-box; }
+#ln_area .ln .nabel { position:relative; display:block; float:left; }
+
+#ln_area .ln .nabel > a { display:block; width:199px; height:60px; line-height:58px; padding-left:30px; font-size:18px; color:#666; text-align:left; letter-spacing:-0.025em; background:url('../images_sub/icon_arrow.gif') no-repeat 90% center; border:1px solid #e8e8e8; border-left:none; box-sizing:border-box; }
+#ln_area .ln .nabel > a > img { vertical-align:middle; }
+
+#ln_area .ln .nabel:first-child > a { width:60px; padding-left:0; text-align:center; background:none; }
+
+
+.sln { position:absolute; display:none; left:-1px; top:60px; width:200px; background:#fff; border:1px solid #e8e8e8;; border-top:none; box-sizing:border-box; }
+.sln > li { display:block; text-align:left; }
+.sln > li > a { display:block; line-height:1.5; padding-left:35px; font-size:15px; color:#777; }
+.sln > li:first-child > a { padding-top:15px; }
+.sln > li:last-child > a { padding-bottom:15px; }
+
+.sln > li:hover > a { font-weight:600; }
+
+#ln_area .ln .nabel:hover > a { font-weight:600; background:url('../images_sub/icon_arrow2.gif') no-repeat 90% center; }
