@@ -34,7 +34,7 @@ $(document).ready(function() {
         spaceBetween: 70,
         autoplay: {
             delay: 2000,
-            stopOnLastSlide: true,
+            //stopOnLastSlide: true,
             pauseOnMouseEnter: true,
         },
         navigation: {
