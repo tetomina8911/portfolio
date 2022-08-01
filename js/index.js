@@ -32,11 +32,6 @@ $(document).ready(function() {
     const swiper = new Swiper('.swiper', {
         speed: 2000,
         spaceBetween: 70,
-        autoplay: {
-            delay: 2000,
-            //stopOnLastSlide: true,
-            pauseOnMouseEnter: true,
-        },
         navigation: {
             nextEl: '.swiper--next',
             prevEl: '.swiper--prev',
