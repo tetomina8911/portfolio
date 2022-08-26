@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('#pagepiling').pagepiling({
+	const MainPagepiling = $('.MainPagepiling').pagepiling({
         menu: 'Nav',
         anchors: ['Portfolio', 'Contact'],
         direction: 'vertical',
