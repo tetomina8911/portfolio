@@ -347,7 +347,7 @@ header nav ul li.active a {
   }
 
   header nav ul li {
-    width: 20vw;
+    width: 41vw;
     line-height: 12vw;
     font-size: 3vw;
   }
@@ -449,10 +449,6 @@ header nav ul li.active a {
     * media : 320
 ------------------------------------------------- */
 @media screen and (max-width: 320px) {
-  header nav ul li {
-    width: 28vw;
-  }
-
   .About--container .About--wrapper .its-me {
     width: 25vw;
   }
