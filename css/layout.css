@@ -360,7 +360,7 @@ header nav ul li.active a {
 
   .portfolio--wrapper li {
     width: 40vw;
-    height: 8.6vh;
+    height: 8vh;
   }
 
   /* About */
@@ -390,10 +390,10 @@ header nav ul li.active a {
   }
   .About--container .About--wrapper ul.career li {
     margin: 0 0 1.2vw;
-    padding: 0 10vw;
+    padding: 0 7vw;
   }
   .About--container .About--wrapper ul.career li span {
-    width: 22vw;
+    width: 20vw;
     margin-right: 2vw;
   }
 
@@ -436,6 +436,15 @@ header nav ul li.active a {
     * media : 375
 ------------------------------------------------- */
 @media screen and (max-width: 375px) {
+  .About--container .About--wrapper ul.career li span {
+    width: 22vw;
+  }
+}
+
+/* ------------------------------------------------- 
+    * media : 320
+------------------------------------------------- */
+@media screen and (max-width: 320px) {
   header nav ul li {
     width: 28vw;
   }
