@@ -430,6 +430,10 @@ header nav ul li.active a {
   .swiper--next {
     right: 2vw;
   }
+
+  #pp-nav {
+    display: none;
+  }
 }
 
 /* ------------------------------------------------- 
