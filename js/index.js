@@ -88,4 +88,8 @@ $(document).ready(function () {
     $(".layer-00").hide();
     $(".layer-04").show();
   });
+  $(".btn_pop05").click(function () {
+    $(".layer-00").hide();
+    $(".layer-05").show();
+  });
 });
