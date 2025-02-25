@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+	<title>MetaPay</title>
+  
+  <link rel="stylesheet" href="../dist/css/common_9900.css">
+  <link rel="stylesheet" href="../dist/css/jquery-ui.css">
+  <link rel="stylesheet" href="../dist/css/dwp.css">
+  <link rel="stylesheet" href="../dist/css/Mdwp.css">
+  <link rel="stylesheet" href="../dist/font/NotoSansKR-Regular.otf">
+</head>
+
+<body>
+  <!-- GNB -->
+  <div id="gnb">
+    <ul>
+      <li><a href="./DwpAttendFm.html">[현장관리자]근태 관리 (일용직)</a></li>
+      <li><a href="./DwpContractFm.html">근로 계약 입력</a></li>
+      <li><a href="./DwpContractListFm.html">근로 계약 대장 조회</a></li>
+      <li><a href="./DwpCwAttendFm.html">근태 관리 (계약직)</a></li>
+      <li><a href="./DwpCwHelper.html">계약직 헬퍼 등록</a></li>
+      <li><a href="./DwpCwHelperList.html">계약직 헬퍼 등록 대장</a></li>
+      <li><a href="./DwpLeave.html">휴가 신청</a></li>
+      <li><a href="./DwpLeaveList.html">휴가 신청 현황</a></li>
+      <li><a href="./DwpAttendHr.html">[HR 관리자]근태 관리 (일용직)</a></li>
+      <li><a href="./DwpLeaveAppr.html">휴가 승인</a></li>
+    </ul>
+    <button id="btnMenuClose">X</button>
+  </div>
+
+  <!-- 컨텐츠영역 : pc -->
+  <div class="newContents">
+    <button id="btnMenu">
+      <span></span><span></span><span></span>
+    </button>
+    <!-- 타이틀 영역 -->
+    <h2 class="subTitle">근태 관리 (일용직)</h2>
+    <!--// 타이틀 영역 -->
+
+    <div class="searchWrapper">
+      <div class="selectArea">
+        <div class="selectBox">
+          <p class="selected">이름으로 검색</p>
+          <ul>
+            <li>휴대전화로 검색</li>
+            <li>가나다로 검색</li>
+            <li>다른걸로 검색</li>
+          </ul>
+        </div>
+        <input type="text">
+      </div>
+
+      <div class="dateArea">
+        <input type="text" id="datepicker01" class="datepicker">
+        <span class="txtHipen">-</span>
+        <input type="text" id="datepicker02" class="datepicker">
+      </div>
+      <button class="btnSearch">검색</button>
+
+      <div class="tableColorInfoArea">
+        <div class="infoBox ended">
+          <span></span>
+          <p>마감된 건</p>
+        </div>
+        <div class="infoBox modified">
+          <span></span>
+          <p>수정된 건</p>
+        </div>
+        <div class="infoBox leftOuted">
+          <span></span>
+          <p>필수정보 누락 건</p>
+        </div>
+        <div class="infoText">
+          수정 후, 저장하지 않으면 적용되지 않습니다.
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="tableWrapper">
+      <div class="tableTop">
+        <p class="total">총 인원 <b>250</b>명</p>
+        <div>
+          <button class="btnFileDown">파일다운로드</button>
+        </div>
+      </div>
+      <div class="tableOutline">
+        <table class="tableHorizen_type1">
+          <colgroup>
+            <col width="2%" />
+            <col width="5.8%" />
+            <col width="4.9%" />
+            <col width="4.9%" />
+            <col width="4.9%" />
+            <col width="4.9%" />
+            <col width="4.9%" />
+            <col width="4.9%" />
+            <col width="4.9%" />
+            <col width="4.9%" />
+            <col width="4.9%" />
+            <col width="4.9%" />
+            <col width="4.9%" />
+            <col width="4.9%" />
+            <col width="4.9%" />
+            <col width="4.9%" />
+            <col width="4.9%" />
+            <col width="4.9%" />
+            <col width="4.9%" />
+            <col width="4.9%" />
+            <col width="4%" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col"><input type="checkbox" name="" id="allCheck"></th>
+              <th scope="col">근로일</th>
+              <th scope="col">근로자명</th>
+              <th scope="col">캠프</th>
+              <th scope="col">시프트</th>
+              <th scope="col">Wave</th>
+              <th scope="col">시프트 시작</th>
+              <th scope="col">시프트 종료</th>
+              <th scope="col">쿠펀치 인</th>
+              <th scope="col">쿠펀치 아웃</th>
+              <th scope="col">인정 출근</th>
+              <th scope="col">인정 퇴근</th>
+              <th scope="col">지각</th>
+              <th scope="col">조퇴</th>
+              <th scope="col">조출</th>
+              <th scope="col">연장</th>
+              <th scope="col">출근 사유</th>
+              <th scope="col">퇴근 사유</th>
+              <th scope="col">주민번호</th>
+              <th scope="col">계좌번호</th>
+              <th scope="col">수기계약</th>
+            </tr>
+          </thead>
+          <tbody id="tbody">
+            <tr>
+              <td><input type="checkbox" name="lineCheck"></td>
+              <td>2024-07-28</td>
+              <td>김길동</td>
+              <td>SUB-AYG1</td>
+              <td>소분 1</td>
+              <td>Wave1</td>
+              <td>9:00</td>
+              <td>18:00</td>
+              <td>08:45</td>
+              <td>19:00</td>
+              <td>08:00</td>
+              <td>18:00</td>
+              <td>-</td>
+              <td>- 00:30</td>
+              <td>+ 00:30</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="blueTxt">Y</span> <button class="btn_regi btn_grey_s" disabled>등록</button>
+                </div>
+              </td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="redTxt">N</span> <button class="btn_regi btn_grey_s">등록</button>
+                </div>
+              </td>
+              <td><span class="blueTxt">Y</span> </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="lineCheck"></td>
+              <td>2024-07-28</td>
+              <td>김길동</td>
+              <td>SUB-AYG1</td>
+              <td>소분 1</td>
+              <td>Wave1</td>
+              <td>9:00</td>
+              <td>18:00</td>
+              <td>08:45</td>
+              <td>19:00</td>
+              <td>08:00</td>
+              <td>18:00</td>
+              <td>-</td>
+              <td>- 00:30</td>
+              <td>+ 00:30</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="blueTxt">Y</span> <button class="btn_regi btn_grey_s" disabled>등록</button>
+                </div>
+              </td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="redTxt">N</span> <button class="btn_regi btn_grey_s">등록</button>
+                </div>
+              </td>
+              <td><span class="blueTxt">Y</span> </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="lineCheck"></td>
+              <td>2024-07-28</td>
+              <td>김길동</td>
+              <td>SUB-AYG1</td>
+              <td>소분 1</td>
+              <td>Wave1</td>
+              <td>9:00</td>
+              <td>18:00</td>
+              <td>08:45</td>
+              <td>19:00</td>
+              <td>08:00</td>
+              <td>18:00</td>
+              <td>-</td>
+              <td>- 00:30</td>
+              <td>+ 00:30</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="blueTxt">Y</span> <button class="btn_regi btn_grey_s" disabled>등록</button>
+                </div>
+              </td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="redTxt">N</span> <button class="btn_regi btn_grey_s">등록</button>
+                </div>
+              </td>
+              <td><span class="blueTxt">Y</span> </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="lineCheck"></td>
+              <td>2024-07-28</td>
+              <td>김길동</td>
+              <td>SUB-AYG1</td>
+              <td>소분 1</td>
+              <td>Wave1</td>
+              <td>9:00</td>
+              <td>18:00</td>
+              <td>08:45</td>
+              <td>19:00</td>
+              <td>08:00</td>
+              <td>18:00</td>
+              <td>-</td>
+              <td>- 00:30</td>
+              <td>+ 00:30</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="blueTxt">Y</span> <button class="btn_regi btn_grey_s" disabled>등록</button>
+                </div>
+              </td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="redTxt">N</span> <button class="btn_regi btn_grey_s">등록</button>
+                </div>
+              </td>
+              <td><span class="blueTxt">Y</span> </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="lineCheck"></td>
+              <td>2024-07-28</td>
+              <td>김길동</td>
+              <td>SUB-AYG1</td>
+              <td>소분 1</td>
+              <td>Wave1</td>
+              <td>9:00</td>
+              <td>18:00</td>
+              <td>08:45</td>
+              <td>19:00</td>
+              <td>08:00</td>
+              <td>18:00</td>
+              <td>-</td>
+              <td>- 00:30</td>
+              <td>+ 00:30</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="blueTxt">Y</span> <button class="btn_regi btn_grey_s" disabled>등록</button>
+                </div>
+              </td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="redTxt">N</span> <button class="btn_regi btn_grey_s">등록</button>
+                </div>
+              </td>
+              <td><span class="blueTxt">Y</span> </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="lineCheck"></td>
+              <td>2024-07-28</td>
+              <td>김길동</td>
+              <td>SUB-AYG1</td>
+              <td>소분 1</td>
+              <td>Wave1</td>
+              <td>9:00</td>
+              <td>18:00</td>
+              <td>08:45</td>
+              <td>19:00</td>
+              <td>08:00</td>
+              <td>18:00</td>
+              <td>-</td>
+              <td>- 00:30</td>
+              <td>+ 00:30</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="blueTxt">Y</span> <button class="btn_regi btn_grey_s" disabled>등록</button>
+                </div>
+              </td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="redTxt">N</span> <button class="btn_regi btn_grey_s">등록</button>
+                </div>
+              </td>
+              <td><span class="blueTxt">Y</span> </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="lineCheck"></td>
+              <td>2024-07-28</td>
+              <td>김길동</td>
+              <td>SUB-AYG1</td>
+              <td>소분 1</td>
+              <td>Wave1</td>
+              <td>9:00</td>
+              <td>18:00</td>
+              <td>08:45</td>
+              <td>19:00</td>
+              <td>08:00</td>
+              <td>18:00</td>
+              <td>-</td>
+              <td>- 00:30</td>
+              <td>+ 00:30</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="blueTxt">Y</span> <button class="btn_regi btn_grey_s" disabled>등록</button>
+                </div>
+              </td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="redTxt">N</span> <button class="btn_regi btn_grey_s">등록</button>
+                </div>
+              </td>
+              <td><span class="blueTxt">Y</span> </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="lineCheck"></td>
+              <td>2024-07-28</td>
+              <td>김길동</td>
+              <td>SUB-AYG1</td>
+              <td>소분 1</td>
+              <td>Wave1</td>
+              <td>9:00</td>
+              <td>18:00</td>
+              <td>08:45</td>
+              <td>19:00</td>
+              <td>08:00</td>
+              <td>18:00</td>
+              <td>-</td>
+              <td>- 00:30</td>
+              <td>+ 00:30</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="blueTxt">Y</span> <button class="btn_regi btn_grey_s" disabled>등록</button>
+                </div>
+              </td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="redTxt">N</span> <button class="btn_regi btn_grey_s">등록</button>
+                </div>
+              </td>
+              <td><span class="blueTxt">Y</span> </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="lineCheck"></td>
+              <td>2024-07-28</td>
+              <td>김길동</td>
+              <td>SUB-AYG1</td>
+              <td>소분 1</td>
+              <td>Wave1</td>
+              <td>9:00</td>
+              <td>18:00</td>
+              <td>08:45</td>
+              <td>19:00</td>
+              <td>08:00</td>
+              <td>18:00</td>
+              <td>-</td>
+              <td>- 00:30</td>
+              <td>+ 00:30</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="blueTxt">Y</span> <button class="btn_regi btn_grey_s" disabled>등록</button>
+                </div>
+              </td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="redTxt">N</span> <button class="btn_regi btn_grey_s">등록</button>
+                </div>
+              </td>
+              <td><span class="blueTxt">Y</span> </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="lineCheck"></td>
+              <td>2024-07-28</td>
+              <td>김길동</td>
+              <td>SUB-AYG1</td>
+              <td>소분 1</td>
+              <td>Wave1</td>
+              <td>9:00</td>
+              <td>18:00</td>
+              <td>08:45</td>
+              <td>19:00</td>
+              <td>08:00</td>
+              <td>18:00</td>
+              <td>-</td>
+              <td>- 00:30</td>
+              <td>+ 00:30</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="blueTxt">Y</span> <button class="btn_regi btn_grey_s" disabled>등록</button>
+                </div>
+              </td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="redTxt">N</span> <button class="btn_regi btn_grey_s">등록</button>
+                </div>
+              </td>
+              <td><span class="blueTxt">Y</span> </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="lineCheck"></td>
+              <td>2024-07-28</td>
+              <td>김길동</td>
+              <td>SUB-AYG1</td>
+              <td>소분 1</td>
+              <td>Wave1</td>
+              <td>9:00</td>
+              <td>18:00</td>
+              <td>08:45</td>
+              <td>19:00</td>
+              <td>08:00</td>
+              <td>18:00</td>
+              <td>-</td>
+              <td>- 00:30</td>
+              <td>+ 00:30</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="blueTxt">Y</span> <button class="btn_regi btn_grey_s" disabled>등록</button>
+                </div>
+              </td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="redTxt">N</span> <button class="btn_regi btn_grey_s">등록</button>
+                </div>
+              </td>
+              <td><span class="blueTxt">Y</span> </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="lineCheck"></td>
+              <td>2024-07-28</td>
+              <td>김길동</td>
+              <td>SUB-AYG1</td>
+              <td>소분 1</td>
+              <td>Wave1</td>
+              <td>9:00</td>
+              <td>18:00</td>
+              <td>08:45</td>
+              <td>19:00</td>
+              <td>08:00</td>
+              <td>18:00</td>
+              <td>-</td>
+              <td>- 00:30</td>
+              <td>+ 00:30</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="blueTxt">Y</span> <button class="btn_regi btn_grey_s" disabled>등록</button>
+                </div>
+              </td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="redTxt">N</span> <button class="btn_regi btn_grey_s">등록</button>
+                </div>
+              </td>
+              <td><span class="blueTxt">Y</span> </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="lineCheck"></td>
+              <td>2024-07-28</td>
+              <td>김길동</td>
+              <td>SUB-AYG1</td>
+              <td>소분 1</td>
+              <td>Wave1</td>
+              <td>9:00</td>
+              <td>18:00</td>
+              <td>08:45</td>
+              <td>19:00</td>
+              <td>08:00</td>
+              <td>18:00</td>
+              <td>-</td>
+              <td>- 00:30</td>
+              <td>+ 00:30</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="blueTxt">Y</span> <button class="btn_regi btn_grey_s" disabled>등록</button>
+                </div>
+              </td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="redTxt">N</span> <button class="btn_regi btn_grey_s">등록</button>
+                </div>
+              </td>
+              <td><span class="blueTxt">Y</span> </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="lineCheck"></td>
+              <td>2024-07-28</td>
+              <td>김길동</td>
+              <td>SUB-AYG1</td>
+              <td>소분 1</td>
+              <td>Wave1</td>
+              <td>9:00</td>
+              <td>18:00</td>
+              <td>08:45</td>
+              <td>19:00</td>
+              <td>08:00</td>
+              <td>18:00</td>
+              <td>-</td>
+              <td>- 00:30</td>
+              <td>+ 00:30</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="blueTxt">Y</span> <button class="btn_regi btn_grey_s" disabled>등록</button>
+                </div>
+              </td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="redTxt">N</span> <button class="btn_regi btn_grey_s">등록</button>
+                </div>
+              </td>
+              <td><span class="blueTxt">Y</span> </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="lineCheck"></td>
+              <td>2024-07-28</td>
+              <td>김길동</td>
+              <td>SUB-AYG1</td>
+              <td>소분 1</td>
+              <td>Wave1</td>
+              <td>9:00</td>
+              <td>18:00</td>
+              <td>08:45</td>
+              <td>19:00</td>
+              <td>08:00</td>
+              <td>18:00</td>
+              <td>-</td>
+              <td>- 00:30</td>
+              <td>+ 00:30</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="blueTxt">Y</span> <button class="btn_regi btn_grey_s" disabled>등록</button>
+                </div>
+              </td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="redTxt">N</span> <button class="btn_regi btn_grey_s">등록</button>
+                </div>
+              </td>
+              <td><span class="blueTxt">Y</span> </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="lineCheck"></td>
+              <td>2024-07-28</td>
+              <td>김길동</td>
+              <td>SUB-AYG1</td>
+              <td>소분 1</td>
+              <td>Wave1</td>
+              <td>9:00</td>
+              <td>18:00</td>
+              <td>08:45</td>
+              <td>19:00</td>
+              <td>08:00</td>
+              <td>18:00</td>
+              <td>-</td>
+              <td>- 00:30</td>
+              <td>+ 00:30</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="blueTxt">Y</span> <button class="btn_regi btn_grey_s" disabled>등록</button>
+                </div>
+              </td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="redTxt">N</span> <button class="btn_regi btn_grey_s">등록</button>
+                </div>
+              </td>
+              <td><span class="blueTxt">Y</span> </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="lineCheck"></td>
+              <td>2024-07-28</td>
+              <td>김길동</td>
+              <td>SUB-AYG1</td>
+              <td>소분 1</td>
+              <td>Wave1</td>
+              <td>9:00</td>
+              <td>18:00</td>
+              <td>08:45</td>
+              <td>19:00</td>
+              <td>08:00</td>
+              <td>18:00</td>
+              <td>-</td>
+              <td>- 00:30</td>
+              <td>+ 00:30</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="blueTxt">Y</span> <button class="btn_regi btn_grey_s" disabled>등록</button>
+                </div>
+              </td>
+              <td>
+                <div class="btnRegiArea">
+                  <span class="redTxt">N</span> <button class="btn_regi btn_grey_s">등록</button>
+                </div>
+              </td>
+              <td><span class="blueTxt">Y</span> </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tableBottom">
+        <div class="buttonArea">
+          <button class="btnDel" id="btnDel">삭제</button>
+        </div>
+        <div class="buttonArea">
+          <button class="btnEnd btn btn_blue">마감</button>
+          <button class="btnSave btn btn_blue">저장</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--// 컨텐츠영역 : pc -->
+
+  <!-- 컨텐츠영역 : mobile -->
+  <div class="newContentsMB">
+    <div class="mbSubTitleBox">
+      <h2 class="mb_subTitle">근태 관리 (일용직) </h2>
+      <span class="date">'24.10.15 ~'24.10.16</span>
+    </div>
+
+    <div class="topFilterBox">
+      <div class="defaultFilterArea">
+        <div class="label-group">
+          <span class="iconSearch"></span>
+          <!-- <input type="text"> -->
+          <button class="btnFilter">상세검색</button>
+        </div>
+
+      <div class="label-group">
+        <label for="bbb">전체</label>
+        <input type="checkbox" id="bbb" name="" />
+      </div>
+        
+        <!-- <div class="label-group">
+          <input type="submit" value="검색" class="btn_blue">
+        </div> -->
+      </div>
+
+<!--       
+      <div class="detailFilterArea">
+        <ul class="radio-group">
+          <li>
+            <input type="radio" class="" name="bb" id="a1" checked>
+            <label for="a1" id="">이름 검색</label>            
+          </li>
+          <li>
+            <input type="radio" class="" name="bb" id="a2">
+            <label for="a2" id="">시프트 검색</label>
+          </li>
+          <li>
+            <input type="radio" class="" name="bb" id="a3">
+            <label for="a3" id="">마감되지 않은 건</label>
+          </li>
+        </ul>
+
+        <div class="dateArea">
+          <input type="text" id="datepickerMB01" class="datepicker">
+          <span class="txtHipen">-</span>
+          <input type="text" id="datepickerMB02" class="datepicker">
+        </div>
+      </div> -->
+    </div>    
+
+    <div class="middleFilterBox">
+      <div class="label-group">
+        <p class="totalText">총 인원 <span>250</span>명</p>
+      </div>
+
+      <div class="label-group">
+        <div class="selectBox">
+          <p>주민번호 누락 <span>30</span></p>
+          <ul>
+            <li>계좌번호 누락 <span>2</span></li>
+            <li>계좌번호 누락 <span>2</span></li>
+            <li>지각 10분 이상 <span>280</span></li>
+            <li>조퇴 30분 이상 <span>2</span></li>
+            <li>조출 10분 이상 <span>2</span></li>
+            <li>연장 15분 이상 <span>30</span></li>
+            <li>펀치 아웃 누락 <span>2</span></li>
+          </ul>
+        </div>
+        <button class="btnAllOpen">전체펼침</button>
+      </div>
+    </div>
+
+
+    <ul class="listBox">
+      <li>
+        <div class="pointerArea">
+          <div class="flex"><span>근로자명</span> <p><u class="redTxt">홍길동</u> / *******5678</p></div>
+          <div class="flex"><span>시프트 시작/종료</span> <p>09:00 ~ 18:00</p></div>
+          <div class="flex"><span>근로일</span> <p>2024-07-28</p></div>
+        </div>
+        <div class="slideArea">
+          <div class="slideUp">
+            <div class="flex"><span>근로일</span> <p>2024-07-28</p></div>
+            <div class="flex"><span>근로자명</span> <p>홍길동 / *******5678</p></div>
+            <div class="flex"><span>캠프</span> <p>SUB-AYG1</p></div>
+            <div class="flex"><span>시프트</span> <p>소분 1</p></div>
+            <div class="flex"><span>Wave</span> <p>Wave 1</p></div>
+          </div>
+
+          <span class="line"></span>
+
+          <div class="flex"><span>시프트 시작/종료</span> <p>09:00 ~ 18:00</p></div>
+          <div class="flex"><span>쿠펀치 인/아웃</span> <p>09:00 ~ 18:00</p></div>
+          <div class="flex"><span>인정 출근/퇴근</span> <p><input type="text"> ~ <input type="text"></p></div>
+          <div class="flex"><span>지각/조퇴</span> <p><input type="text" class="noBorder"></p></div>
+          <div class="flex"><span>조출/연장</span> <p>+ <input type="text"> / + <input type="text"></p></div>
+          <div class="flex"><span>출근 사유</span> <p><input type="text"></p></div>
+          <div class="flex"><span>퇴근 사유</span> <p>업무 지원으로 조기출근</p></div>
+          <span class="line"></span>
+          <div class="flex"><span>주민번호</span> <p>******-*******</p></div>
+          <div class="flex"><span>계좌번호</span> <p><button class="btnConfirm" onclick="bankPop()">등록</button></p></div>
+          <div class="flex"><span>수기계약</span> <p>Y</p></div>
+        </div>
+        <input type="checkbox" name="" id="">
+      </li>
+
+      <li>
+        <div class="pointerArea">
+          <div class="flex"><span>근로자명</span> <p>홍길동 / *******5678</p></div>
+          <div class="flex"><span>시프트 시작/종료</span> <p>09:00 ~ 18:00</p></div>
+          <div class="flex"><span>근로일</span> <p>2024-07-28</p></div>
+        </div>
+        <div class="slideArea">
+          <div class="slideUp">
+            <div class="flex"><span>근로일</span> <p>2024-07-28</p></div>
+            <div class="flex"><span>근로자명</span> <p>홍길동 / *******5678</p></div>
+            <div class="flex"><span>캠프</span> <p>SUB-AYG1</p></div>
+            <div class="flex"><span>시프트</span> <p>소분 1</p></div>
+            <div class="flex"><span>Wave</span> <p>Wave 1</p></div>
+          </div>
+
+          <span class="line"></span>
+
+          <div class="flex"><span>시프트 시작/종료</span> <p>09:00 ~ 18:00</p></div>
+          <div class="flex"><span>쿠펀치 인/아웃</span> <p>09:00 ~ 18:00</p></div>
+          <div class="flex"><span>인정 출근/퇴근</span> <p><input type="text" class="inputSamll"> ~ <input type="text" class="inputSamll"></p></div>
+          <div class="flex"><span>지각/조퇴</span> <p>- 00:30 / -</p></div>
+          <div class="flex"><span>조출/연장</span> <p>+ 00:30 / -</p></div>
+          <div class="flex"><span>출근 사유</span> <p>업무 지원으로 조기출근</p></div>
+          <div class="flex"><span>퇴근 사유</span> <p>업무 지원으로 조기출근</p></div>
+          <span class="line"></span>
+          <div class="flex"><span>주민번호</span> <p>******-*******</p></div>
+          <div class="flex"><span>계좌번호</span> <p><button class="btnConfirm" onclick="bankPop()">등록</button></p></div>
+          <div class="flex"><span>수기계약</span> <p>Y</p></div>
+        </div>
+        <input type="checkbox" name="" id="">
+      </li>
+
+      <li>
+        <div class="pointerArea">
+          <div class="flex"><span>근로자명</span> <p>홍길동 / *******5678</p></div>
+          <div class="flex"><span>시프트 시작/종료</span> <p>09:00 ~ 18:00</p></div>
+          <div class="flex"><span>근로일</span> <p>2024-07-28</p></div>
+        </div>
+        <div class="slideArea">
+          <div class="slideUp">
+            <div class="flex"><span>근로일</span> <p>2024-07-28</p></div>
+            <div class="flex"><span>근로자명</span> <p>홍길동 / *******5678</p></div>
+            <div class="flex"><span>캠프</span> <p>SUB-AYG1</p></div>
+            <div class="flex"><span>시프트</span> <p>소분 1</p></div>
+            <div class="flex"><span>Wave</span> <p>Wave 1</p></div>
+          </div>
+
+          <span class="line"></span>
+
+          <div class="flex"><span>시프트 시작/종료</span> <p>09:00 ~ 18:00</p></div>
+          <div class="flex"><span>쿠펀치 인/아웃</span> <p>09:00 ~ 18:00</p></div>
+          <div class="flex"><span>인정 출근/퇴근</span> <p><input type="text" class="inputSamll"> ~ <input type="text" class="inputSamll"></p></div>
+          <div class="flex"><span>지각/조퇴</span> <p>- 00:30 / -</p></div>
+          <div class="flex"><span>조출/연장</span> <p>+ 00:30 / -</p></div>
+          <div class="flex"><span>출근 사유</span> <p>업무 지원으로 조기출근</p></div>
+          <div class="flex"><span>퇴근 사유</span> <p>업무 지원으로 조기출근</p></div>
+          <span class="line"></span>
+          <div class="flex"><span>주민번호</span> <p>******-*******</p></div>
+          <div class="flex"><span>계좌번호</span> <p><button class="btnConfirm" onclick="bankPop()">등록</button></p></div>
+          <div class="flex"><span>수기계약</span> <p>Y</p></div>
+        </div>
+        <input type="checkbox" name="" id="">
+      </li>
+
+      <li>
+        <div class="pointerArea">
+          <div class="flex"><span>근로자명</span> <p>홍길동 / *******5678</p></div>
+          <div class="flex"><span>시프트 시작/종료</span> <p>09:00 ~ 18:00</p></div>
+          <div class="flex"><span>근로일</span> <p>2024-07-28</p></div>
+        </div>
+        <div class="slideArea">
+          <div class="slideUp">
+            <div class="flex"><span>근로일</span> <p>2024-07-28</p></div>
+            <div class="flex"><span>근로자명</span> <p>홍길동 / *******5678</p></div>
+            <div class="flex"><span>캠프</span> <p>SUB-AYG1</p></div>
+            <div class="flex"><span>시프트</span> <p>소분 1</p></div>
+            <div class="flex"><span>Wave</span> <p>Wave 1</p></div>
+          </div>
+
+          <span class="line"></span>
+
+          <div class="flex"><span>시프트 시작/종료</span> <p>09:00 ~ 18:00</p></div>
+          <div class="flex"><span>쿠펀치 인/아웃</span> <p>09:00 ~ 18:00</p></div>
+          <div class="flex"><span>인정 출근/퇴근</span> <p><input type="text" class="inputSamll"> ~ <input type="text" class="inputSamll"></p></div>
+          <div class="flex"><span>지각/조퇴</span> <p>- 00:30 / -</p></div>
+          <div class="flex"><span>조출/연장</span> <p>+ 00:30 / -</p></div>
+          <div class="flex"><span>출근 사유</span> <p>업무 지원으로 조기출근</p></div>
+          <div class="flex"><span>퇴근 사유</span> <p>업무 지원으로 조기출근</p></div>
+          <span class="line"></span>
+          <div class="flex"><span>주민번호</span> <p>******-*******</p></div>
+          <div class="flex"><span>계좌번호</span> <p><button class="btnConfirm" onclick="bankPop()">등록</button></p></div>
+          <div class="flex"><span>수기계약</span> <p>Y</p></div>
+        </div>
+        <input type="checkbox" name="" id="">
+      </li>
+
+      <li>
+        <div class="pointerArea">
+          <div class="flex"><span>근로자명</span> <p>홍길동 / *******5678</p></div>
+          <div class="flex"><span>시프트 시작/종료</span> <p>09:00 ~ 18:00</p></div>
+          <div class="flex"><span>근로일</span> <p>2024-07-28</p></div>
+        </div>
+        <div class="slideArea">
+          <div class="slideUp">
+            <div class="flex"><span>근로일</span> <p>2024-07-28</p></div>
+            <div class="flex"><span>근로자명</span> <p>홍길동 / *******5678</p></div>
+            <div class="flex"><span>캠프</span> <p>SUB-AYG1</p></div>
+            <div class="flex"><span>시프트</span> <p>소분 1</p></div>
+            <div class="flex"><span>Wave</span> <p>Wave 1</p></div>
+          </div>
+
+          <span class="line"></span>
+
+          <div class="flex"><span>시프트 시작/종료</span> <p>09:00 ~ 18:00</p></div>
+          <div class="flex"><span>쿠펀치 인/아웃</span> <p>09:00 ~ 18:00</p></div>
+          <div class="flex"><span>인정 출근/퇴근</span> <p><input type="text" class="inputSamll"> ~ <input type="text" class="inputSamll"></p></div>
+          <div class="flex"><span>지각/조퇴</span> <p>- 00:30 / -</p></div>
+          <div class="flex"><span>조출/연장</span> <p>+ 00:30 / -</p></div>
+          <div class="flex"><span>출근 사유</span> <p>업무 지원으로 조기출근</p></div>
+          <div class="flex"><span>퇴근 사유</span> <p>업무 지원으로 조기출근</p></div>
+          <span class="line"></span>
+          <div class="flex"><span>주민번호</span> <p>******-*******</p></div>
+          <div class="flex"><span>계좌번호</span> <p><button class="btnConfirm" onclick="bankPop()">등록</button></p></div>
+          <div class="flex"><span>수기계약</span> <p>Y</p></div>
+        </div>
+        <input type="checkbox" name="" id="">
+      </li>
+
+    </ul>
+
+
+    <div class="bottomFixedBtn">
+      <div class="leftArea">
+        <button class="btn_blue">마감</button>
+        <button class="btn_blue">일괄마감</button>
+        <button class="btn_blue">저장</button>
+      </div>
+      <div class="rightArea">
+        <button class="btn_del"></button>
+        <button class="btn_add"></button>
+      </div>
+    </div>
+  </div>
+  <!--// 컨텐츠영역 : mobile -->
+
+  <!-- 팝업 : 공통 -->
+  <div id="layerPop-bg"></div>
+  <div id="layerPop_Container" style="display: block;">
+
+    <!-- 팝업 : 상세검색 -->
+    <div class="layerPop_wrapper mb layerPop_detailFilter">
+      <div class="layerPop_header">상세검색</div>
+      <div class="layerPop_body">
+        <div class="dl-flex-box">
+          <dl>
+            <dt>컘프</dt>
+            <dd>
+              <select name="" id="" class="selectBox">
+                <option value="">강서 1</option>
+                <option value="">강서 2</option>
+                <option value="">송파 1</option>
+                <option value="">송파 2</option>
+                <option value="">인천 1</option>
+              </select>
+            </dd>
+          </dl>
+          <dl>
+            <dt>근로일</dt>
+            <dd>
+              <div class="dateArea">
+                <input type="text" id="datepickerMB01" class="datepicker">
+                <span class="txtHipen">-</span>
+                <input type="text" id="datepickerMB02" class="datepicker">
+              </div>
+            </dd>
+          </dl>
+          <dl>
+            <dt>WAVE</dt>
+            <dd>
+              <select name="" id="" class="selectBox">
+                <option value="">강서 1</option>
+                <option value="">강서 2</option>
+                <option value="">송파 1</option>
+                <option value="">송파 2</option>
+                <option value="">인천 1</option>
+              </select>
+            </dd>
+          </dl>
+          <dl>
+            <dt>시프트</dt>
+            <dd>
+              <select name="" id="" class="selectBox">
+                <option value="">강서 1</option>
+                <option value="">강서 2</option>
+                <option value="">송파 1</option>
+                <option value="">송파 2</option>
+                <option value="">인천 1</option>
+              </select>
+            </dd>
+          </dl>
+          <dl>
+            <dt>마감여부</dt>
+            <dd>
+              <select name="" id="" class="selectBox">
+                <option value="">전체</option>
+                <option value="">마감</option>
+                <option value="">전체</option>
+                <option value="">마감</option>
+                <option value="">전체</option>
+              </select>
+            </dd>
+          </dl>
+          <dl>
+            <dt>근로자명</dt>
+            <dd>
+              <input type="text">
+            </dd>
+          </dl>
+          <dl>
+            <dt>전화번호</dt>
+            <dd>
+              <input type="text">
+            </dd>
+          </dl>
+          <dl>
+            <dt>출근사유</dt>
+            <dd>
+              <input type="text">
+            </dd>
+          </dl>
+          <dl>
+            <dt>퇴근사유</dt>
+            <dd>
+              <input type="text">
+            </dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="layerPop_btn">
+        <button class="btn_white" onclick="layerPopClose()">닫기</button>
+        <button class="btn_blue">검색</button>
+      </div>
+    </div>
+    <!-- // 팝업 : 상세검색 -->
+
+    <!-- 팝업 : 계좌번호 등록 -->
+    <div class="layerPop_wrapper mb" id="bankPop"><!-- id변경해서 쓰세요 -->
+      <div class="layerPop_header">계좌번호 입력</div>
+      <div class="layerPop_body">
+        <div class="label-group account">
+          <label for="">계좌번호</label>
+          <input type="text" placeholder="계좌번호를 입력하세요.">
+        </div>
+
+        <!-- 맨아래 스크립트 참고 : tabArea 검색  -->
+        <div class="tabArea">
+          <a href="#n" class="tab-item on">은행</a>
+          <a href="#n" class="tab-item">증권</a>
+        </div>
+
+        <div class="resultArea">
+          <!-- 은행 -->
+          <ul class="bank">
+            <li><a href="#n"><img src="../dist/images/icon_bank/bk_kb.png" alt=""> <p>국민</p></a></li>
+            <li><a href="#n"><img src="../dist/images/icon_bank/bk_ibk.png" alt=""> <p>기업</p></a></li>
+            <li><a href="#n"><img src="../dist/images/icon_bank/bk_nh.png" alt=""> <p>농협</p></a></li>
+            <li><a href="#n"><img src="../dist/images/icon_bank/bk_woori.png" alt=""> <p>우리</p></a></li>
+            <li><a href="#n"><img src="../dist/images/icon_bank/bk_shinan.png" alt=""> <p>한</p></a></li>
+            <li><a href="#n"><img src="../dist/images/icon_bank/bk_hana.png" alt=""> <p>하나</p</a></li>
+            <li><a href="#n"><img src="../dist/images/icon_bank/bk_exim.png" alt=""> <p>iM뱅크(대구)</p></a></li>
+            <li><a href="#n"><img src="../dist/images/icon_bank/bk_citi.png" alt=""> <p>한국시티</p><a></li>
+          </ul>
+
+          <!-- 증권 -->
+          <ul class="stock">
+            <li><a href="#n"><img src="../dist/images/icon_bank/st_kyobo.png" alt=""> <p>교보증권</p></a></li>
+            <li><a href="#n"><img src="../dist/images/icon_bank/st_daol.png" alt=""> <p>다올투자증권</p></a></li>
+            <li><a href="#n"><img src="../dist/images/icon_bank/st_daishin.png" alt=""> <p>대신증권</p></a></li>
+            <li><a href="#n"><img src="../dist/images/icon_bank/st_meritz.png" alt=""> <p>메리츠증권</p></a></li>
+            <li><a href="#n"><img src="../dist/images/icon_bank/st_mirae.png" alt=""> <p>미래에셋증권</p></a></li>
+            <li><a href="#n"><img src="../dist/images/icon_bank/st_bookook.png" alt=""> <p>부국증권</p></a></li>
+            <li><a href="#n"><img src="../dist/images/icon_bank/st_samsung.png" alt=""> <p>삼성증권</p></a></li>
+          </ul>
+          
+          <!-- 증권 -->
+        </div>
+      </div>
+
+      <div class="layerPop_btn">
+        <button class="btn_white" onclick="layerPopClose()">닫기</button>
+        <button class="btn_blue">저장</button>
+      </div>
+    </div>
+    <!--// 팝업 : 계좌번호 등록 -->
+
+  </div>
+  <!--// 팝업 : 공통 -->
+
+  <script type="text/javascript" src="../dist/js/jquery.min.js"></script>
+  <script type="text/javascript" src="../dist/js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="../dist/js/dwp.js"></script>
+  <script type="text/javascript">
+    // selecBox
+    function selectBox() {
+      $(".selectBox p").off('click').on('click', function(){
+        $(this).parent().children("ul").stop().slideToggle('');
+        $(this).parent().toggleClass('on');
+      });
+      $(".selectBox ul li").off('click').on('click', function(){
+        $(this).parent("ul").stop().slideUp();
+        $(this).parents(".selectBox").removeClass('on');
+      });
+    }
+
+    // 삭제
+    function removeTd() {
+      $("#btnDel").off('click').on("click",function(){
+        $('input:checkbox[name=lineCheck]').each(function(){
+          if($(this).is(':checked')){
+            $(this).parents('tr').remove();
+          }
+        });
+      });
+    }
+
+    // datepicker
+    $( function() {
+      $("#datepicker01").datepicker({
+        showOn: "button",
+        buttonImage: "../dist/images/iconDate.png",
+        buttonImageOnly: true,
+        buttonText: "Select date",
+        dateFormat: "yy-mm-dd",
+      });
+
+      $("#datepicker02").datepicker({
+        showOn: "button",
+        buttonImage: "../dist/images/iconDate.png",
+        buttonImageOnly: true,
+        buttonText: "Select date",
+        dateFormat: "yy-mm-dd",
+      });
+
+      // datepicker : 팝업 : 모바일 : 검색
+      $("#datepickerMB01").datepicker({
+        showOn: "button",
+        buttonImage: "../dist/images/iconDate.png",
+        buttonImageOnly: true,
+        buttonText: "Select date",
+        dateFormat: "yy-mm-dd",
+      });
+
+      $("#datepickerMB02").datepicker({
+        showOn: "button",
+        buttonImage: "../dist/images/iconDate.png",
+        buttonImageOnly: true,
+        buttonText: "Select date",
+        dateFormat: "yy-mm-dd",
+      });
+      
+      // 당일날짜 가져오기
+      let today = new Date();
+      let today_year = today.getFullYear();
+      let today_month = today.getMonth() + 1;
+      let today_date = today.getDate();      
+      if(today_month < 10) {
+        today_month = "0" + (today_month) ;
+      } 
+      if(today_date < 10) {
+        today_date = "0" + (today_date) ;
+      } 
+      $('.datepicker').val( today_year + "-" + today_month + "-" + today_date);
+    });
+
+    // 팝업 close
+    function layerPopClose() {
+      $('#layerPop-bg').stop().fadeOut('fast');
+      $('#layerPop_Container').stop().fadeOut('fast');
+      $('.layerPop_wrapper').stop().fadeOut('fast');
+    }
+
+    $(document).ready(function(){
+      // 전체 checkbox
+      $('#allCheck').click(function(){
+        $(this).is(":checked") == true 
+          ? $('input:checkbox[name=lineCheck]').prop("checked", true)
+          : $('input:checkbox[name=lineCheck]').prop("checked", false);
+      });
+
+			// 상세검색버튼
+			$(".topFilterBox .defaultFilterArea .btnFilter").click(function() {
+				// $(this).parents(".defaultFilterArea").next(".detailFilterArea").slideToggle();
+        $("#layerPop-bg").stop().fadeIn();
+        $('#layerPop_Container').stop().fadeIn('fast');
+        $(".layerPop_detailFilter").stop().fadeIn();
+			});
+
+
+      // selectBox
+      selectBox();    
+      removeTd();
+
+      // mb - sliding motion
+      $('.newContentsMB .listBox li .pointerArea').click(function() {
+        $(this).hide();
+        $(this).parent('li').children('.slideArea').stop().slideDown();
+      });
+      $('.slideUp').click(function(){
+        $(this).parent(".slideArea").stop().slideUp(function(){
+          $(this).parents("li").children(".pointerArea").show();
+        });
+      });
+
+      // 전체펼침-전체닫힘
+      $(".middleFilterBox .btnAllOpen").click(function(){
+        $('.pointerArea').toggle();
+        $('.slideArea').stop().slideToggle();
+        if($(this).text() == "전체펼침"){
+          $(this).text("전체닫힘");
+        }else{
+          $(this).text("전체펼침");
+        }
+      });
+
+      // 팝업 : 계좌번호 등록 : tabArea 
+      let clickTabIndex;
+      $(".layerPop_wrapper .layerPop_body .tabArea a").click(function(){
+        $(".layerPop_wrapper .layerPop_body .tabArea a").removeClass("on");
+        $(this).addClass("on");
+        clickTabIndex = $(this).index();
+        // resultArea
+        $(".layerPop_wrapper .layerPop_body .resultArea ul").hide();
+        $(".layerPop_wrapper .layerPop_body .resultArea").children('ul').eq(clickTabIndex).css("display","flex");
+      });
+
+    });
+
+    // 팝업 : 계좌번호 등록 
+    function bankPop() {
+      $('#layerPop-bg').stop().fadeIn('');
+      $('#layerPop_Container').stop().fadeIn('');
+      $('#bankPop.layerPop_wrapper').stop().fadeIn('');      
+      $('#bankPop.layerPop_wrapper').css('width','77.263vw');
+    }
+
+
+
+  </script>
+</body>
+</html>

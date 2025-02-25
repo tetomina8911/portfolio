@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MetaPay</title>
+  
+  <link rel="stylesheet" href="../dist/css/common_9900.css">
+  <link rel="stylesheet" href="../dist/css/jquery-ui.css">
+  <link rel="stylesheet" href="../dist/css/dwp.css">
+  <link rel="stylesheet" href="../dist/css/Mdwp.css">
+  <link rel="stylesheet" href="../dist/font/NotoSansKR-Regular.otf">
+</head>
+
+<body>
+  <!-- GNB -->
+  <div id="gnb">
+    <ul>
+      <li><a href="./DwpAttendFm.html">[현장관리자]근태 관리 (일용직)</a></li>
+      <li><a href="./DwpContractFm.html">근로 계약 입력</a></li>
+      <li><a href="./DwpContractListFm.html">근로 계약 대장 조회</a></li>
+      <li><a href="./DwpCwAttendFm.html">근태 관리 (계약직)</a></li>
+      <li><a href="./DwpCwHelper.html">계약직 헬퍼 등록</a></li>
+      <li><a href="./DwpCwHelperList.html">계약직 헬퍼 등록 대장</a></li>
+      <li><a href="./DwpLeave.html">휴가 신청</a></li>
+      <li><a href="./DwpLeaveList.html">휴가 신청 현황</a></li>
+      <li><a href="./DwpAttendHr.html">[HR 관리자]근태 관리 (일용직)</a></li>
+      <li><a href="./DwpLeaveAppr.html">휴가 승인</a></li>
+    </ul>
+    <button id="btnMenuClose">X</button>
+  </div>
+  <!-- 컨텐츠영역 : pc -->
+  <div class="newContents">
+    <button id="btnMenu">
+      <span></span><span></span><span></span>
+    </button>
+    <!-- 타이틀 영역 -->
+    <h2 class="subTitle">휴가 신청</h2>
+    <!--// 타이틀 영역 -->
+
+    <div class="searchWrapper">
+      <div class="selectArea">
+        <div class="selectBox">
+          <p class="selected">이름으로 검색</p>
+          <ul>
+            <li>휴대전화로 검색</li>
+            <li>가나다로 검색</li>
+            <li>다른걸로 검색</li>
+          </ul>
+        </div>
+        <input type="text">
+      </div>
+
+      <div class="dateArea">
+        <input type="text" id="datepicker01" class="datepicker">
+        <span class="txtHipen">-</span>
+        <input type="text" id="datepicker02" class="datepicker">
+      </div>
+      <button class="btnSearch">검색</button>
+    </div>
+
+    <div class="tableWrapper">
+      <div class="tableTop">
+        <p class="total">총 인원 <b>250</b>명</p>
+        <div class="filterArea selectBox">
+          <p class="selected">이름순</p>
+          <ul>
+            <li>신청일순</li>
+            <li>신청일순</li>
+            <li>신청일순</li>
+            <li>신청일순</li>
+            <li>신청일순</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tableOutline">
+        <table class="tableHorizen_type1">
+          <colgroup>
+            <col width="2%" />
+            <col width="10%" />
+            <col width="10%" />
+            <col width="10%" />
+            <col width="10%" />
+            <col width="10%" />
+            <col width="10%" />
+            <col width="10%" />
+            <col width="12%" />
+            <col width="16%" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col"><input type="checkbox" name="" id="allCheck"></th>
+              <th scope="col">신청일</th>
+              <th scope="col">캠프</th>
+              <th scope="col">성명</th>
+              <th scope="col">휴대전화</th>
+              <th scope="col">Wave</th>
+              <th scope="col">휴가 구분</th>
+              <th scope="col">연차사용일수</th>
+              <th scope="col">사유</th>
+              <th scope="col">증빙서류</th>
+            </tr>
+          </thead>
+          <tbody id="tbody">
+            <tr>
+              <td><input type="checkbox" name="lineCheck"></td>
+              <td>
+                <div class="dateArea">
+                  <input type="text" id="datepicker" class="datepicker">
+                </div>
+              </td>
+              <td>
+                <div class="selectBox">
+                  <p class="selected">센터명</p>
+                  <ul>
+                    <li>신청일순</li>
+                    <li>신청일순</li>
+                    <li>신청일순</li>
+                    <li>신청일순</li>
+                    <li>신청일순</li>
+                  </ul>
+                </div>
+              </td>
+              <td><input type="text" placeholder="입력"></td>
+              <td><input type="phone" placeholder="- 없이 입력"></td>
+              <td>
+                <div class="selectBox">
+                  <p class="selected">W2</p>
+                  <ul>
+                    <li>W2</li>
+                    <li>W2</li>
+                    <li>W2</li>
+                    <li>W2</li>
+                    <li>W2</li>
+                  </ul>
+                </div>
+              </td>
+              <td>
+                <div class="selectBox">
+                  <p class="selected">선택</p>
+                  <ul>
+                    <li>연차</li>
+                    <li>반차</li>
+                    <li>예비군 훈련</li>
+                    <li>경조</li>
+                    <li>기타</li>
+                  </ul>
+                </div>
+              </td>
+              <td><input type="text" disabled placeholder="-"></td>
+              <td><input type="text" placeholder="필수 입력"></td>
+              <td>
+                <div class="fileArea">
+                  <input type="text" class="typeFile_Text" id="typeFile_Text" placeholder="예비군훈련/경조 시 첨부" readonly>
+                  <input type="file" class="typeFile" id="typeFile">
+                  <label for="typeFile" class="iconFile"></label>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tableBottom">
+        <div class="buttonArea">
+          <button class="btnDel" id="btnDel">삭제</button>
+          <button class="btnAdd" onclick="addTd()">행 추가</button>
+        </div>
+        <div class="buttonArea">
+          <button class="btnSave btn_blue">저장</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--// 컨텐츠영역 : pc -->
+
+  <!-- 컨텐츠영역 : mobile -->
+  <div class="newContentsMB">
+    <div class="mbSubTitleBox">
+      <h2 class="mb_subTitle">휴가 신청</h2>
+      <div class="totalTxt">
+        <b>250</b>명
+      </div>
+    </div>
+
+    <ul class="listBox">
+      <li>
+        <div class="flex"><span>근로일</span> <p><input type="text" value="2024-08-15"></p></div>
+        <div class="flex"><span>근로자명</span> <p><input type="text" value="김길동"> <button class="iconDupli" id="btnSameName"></button></p></div>
+        <div class="flex"><span>식별자</span> <p><input type="text" value="*******5678"></p></div>
+        <div class="flex"><span>캠프</span> <p><input type="text" value="SUB-AVG1" disabled></p></div>
+        <div class="flex"><span>휴가 구분</span> 
+        <select name="" id="" class="selectBox">
+          <option value="">연차</option>
+          <option value="">연차</option>
+          <option value="">연차</option>
+          <option value="">연차</option>
+          <option value="">연차</option>
+        </select>
+        </div>
+        <div class="flex"><span>휴가사용일수</span> <p><input type="text" value="" disabled></p></div>
+        <div class="flex"><span>사유</span> <p><input type="text" value="" placeholder="필수 입력"></p></div>
+        <div class="flex"><span>증빙서류</span> 
+          <p class="fileBox">
+            <input type="text" class="upload-name" placeholder="공가 및 보건 시 첨부">
+            <label for="file">파일찾기</label> 
+            <input type="file" id="file" class="file">
+          </p>        
+        </div>
+
+        <input type="checkbox" name="" id="">
+      </li>
+    </ul>
+
+    <div class="bottomFixedBtn">
+      <div class="leftArea">
+        <button class="btn_blue">마감</button>
+        <button class="btn_blue">일괄마감</button>
+        <button class="btn_blue">저장</button>
+      </div>
+      <div class="rightArea">
+        <button class="btn_del"></button>
+        <button class="btn_add"></button>
+      </div>
+    </div>
+  </div>
+  <!--// 컨텐츠영역 : mobile -->
+
+  <!-- 팝업 : 공통 -->
+  <div id="layerPop-bg"></div>
+  <div id="layerPop_Container">
+
+    <!-- 팝업 : 동명이인 근로자 선택 -->
+    <div class="layerPop_wrapper mb layerPop_choiceName"><!-- id변경해서 쓰세요 -->
+      <div class="layerPop_header">근로자 선택</div>
+      <div class="layerPop_body">
+        <label for="check1" class="label-group-radio on"> <!-- checked일때 on 추가-->
+          <p>김길동 / *******1234</p>
+          <input type="radio" id="check1" name="checking" checked>
+        </label>
+        <label for="check2" class="label-group-radio">
+          <p>김길동 / *******1234</p>
+          <input type="radio" id="check2" name="checking">
+        </label>
+        <label for="check3" class="label-group-radio">
+          <p>김길동 / *******1234</p>
+          <input type="radio" id="check3" name="checking">
+        </label>
+        <label for="check4" class="label-group-radio">
+          <p>김길동 / *******1234</p>
+          <input type="radio" id="check4" name="checking">
+        </label>
+        <label for="check5" class="label-group-radio">
+          <p>김길동 / *******1234</p>
+          <input type="radio" id="check5" name="checking">
+        </label>
+      </div>
+
+      <div class="layerPop_btn">
+        <button class="btn_white" onclick="layerPopClose()">닫기</button>
+        <button class="btn_blue">저장
+        </button>
+      </div>
+    </div>
+    <!-- // 팝업 : 동명이인 근로자 선택 -->
+
+    <!-- 팝업 : msg box -->
+    <div class="layerPop_wrapper mb layerPop_alert" id="msgPop"><!-- id변경해서 쓰세요 -->
+      <div class="iconTopcheck"></div>
+      <div class="layerPop_body">
+        <div class="account messageText" id="msg">근로일 먼저 선택해주세요.</div>
+        <div class="layerPop_btn">
+          <button class="btn_white" onclick="javascript:doAction('close2');">닫기</button>
+          <!-- <button class="btn_blue" onclick="javascript:doAction('bankApply');">적용</button> -->
+        </div>
+      </div>
+    </div>	
+    <!-- 팝업 : msg box -->
+
+    <!-- 팝업 : 파일 업로드  -->
+    <div id="uploadLayer" class="layerPop_wrapper mb layerPop_file">
+      <div class="layerPop_header">파일 업로드  <!-- 파일 다운로드 --></div>
+      <div class="layerPop_body">
+        <form id="uploadFrm" name="uploadFrm"  action="" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="progGubun" value="A">
+          <input type="hidden" id="liId" name="liId" ><!-- 선택된 li의 순번 저장  -->
+          <!-- 파일있을때 -->
+          <div class="file-download-outline">
+            <a href="#n" class="">20240728_1234567.jpg</a>
+            <a href="#n" class="">20240728_1234567.jpg</a>
+            <a href="#n" class="">20240728_1234567.jpg</a>
+            <a href="#n" class="">20240728_1234567.jpg</a>
+            <a href="#n" class="">20240728_1234567.jpg</a>
+          </div>
+          <!-- // 파일있을때 -->
+
+          <div class="file-upload-outline"><label for="fileAttach" class="file-upload">파일 찾기</label></div>
+          <input id="fileAttach" type="file" accept="image/*, application/pdf, application/vnd.ms-excel,  application/msword, .docx, .xlsx, .hwp" class="form-control" name="fileAttach" style="width:300px;" readonly="readonly" multiple/>
+
+          <!-- 파일없을때 -->
+          <div class="nodata">등록된 파일이 없습니다</div>
+          
+        </form>
+      </div>
+      <div class="layerPop_btn">
+        <span id ="hiddenMsg" style="display: none;color:red;">upload중 입니다.</span>
+        <button class="btn_white hiddenBtn" onclick="javascript:doAction('close2');">닫기</button>
+
+        <!-- 파일없을때-->
+        <button class="btn_blue hiddenBtn" onclick="javascript:fileUpload();">업로드</button>
+        <!-- // 파일없을때-->
+
+        <!-- 파일있을때-->
+        <button class="btn_blue" onclick="">모두삭제</button>
+        <button class="btn_blue" onclick="">다운로드</button>
+        <!-- // 파일있을때-->
+
+      </div>
+    </div>
+    <!-- // 팝업 : 파일 업로드 -->
+
+    <!-- 팝업 : 파일 보기 -->
+    <div class="layerPop_wrapper mb layerPop_file_view" id="" style="display: block;"><!-- id변경해서 쓰세요 -->
+      <div class="layerPop_header">파일 보기</div>
+      <div class="layerPop_body">
+        <div class="file-view-outline">
+          <div class="file-view">
+            
+          </div>
+        </div>
+        <div class="layerPop_btn">
+          <button class="btn_white" onclick="javascript:doAction('close2');">닫기</button>
+          <!-- <button class="btn_blue" onclick="javascript:doAction('bankApply');">적용</button> -->
+        </div>
+      </div>
+    </div>	
+    <!-- // 팝업 : 파일 보기 -->
+
+    <!-- 팝업 : 로딩박스 등록 -->
+    <div id="lodingPop" class="loading-wrapper">
+      <div class="loading-flex">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
+    <!--// 팝업 : 로딩박스 등록 -->
+
+  </div>
+  <!--// 팝업 : 공통 -->
+
+  
+  <script type="text/javascript" src="../dist/js/jquery.min.js"></script>
+  <script type="text/javascript" src="../dist/js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="../dist/js/dwp.js"></script>
+  <script type="text/javascript">
+    // selecBox
+    function selectBox() {
+      $(".selectBox p").off('click').on('click', function(){
+        $(this).parent().children("ul").stop().slideToggle('');
+      });
+      $(".selectBox ul li").off('click').on('click', function(){
+        let text = $(this).text();
+        $(this).parents(".selectBox").children("p").text(text);
+        $(this).parent("ul").stop().slideUp();
+      });
+    }
+
+    $(document).ready(function(){
+      // selectBox
+      selectBox(); 
+      
+      // fileBox
+      $(".fileBox .file").on('change',function(){
+        console.log('dd')
+        let fileName = $(this).val();
+        $(this).parent().children(".upload-name").val(fileName);
+      });
+
+      // 팝업 - 동명이인
+      $("#btnSameName").click(function(){
+        $('#layerPop-bg').stop().fadeIn('');
+        $('#layerPop_Container').stop().fadeIn('');
+        $('.layerPop_choiceName.layerPop_wrapper').stop().fadeIn();      
+        $('.layerPop_choiceName.layerPop_wrapper').css('width','77.263vw');
+      });
+    });
+
+    // 팝업 close
+    function layerPopClose() {
+      $('#layerPop-bg').stop().fadeOut('fast');
+      $('#layerPop_Container').stop().fadeOut('fast');
+      $('.layerPop_wrapper').stop().fadeOut('fast');
+    }
+
+  </script>
+</body>
+</html>

@@ -38,7 +38,7 @@ $(document).ready(function () {
     },
   });
 
-  $(".portfolio--wrapper li").hover(
+  $(".portfolio-wrapper li").hover(
     function () {
       $(this).children(".shadow__box").stop().fadeIn();
     },
@@ -72,24 +72,12 @@ $(document).ready(function () {
     $(".swiper").addClass("hidden");
   });
 
-  $(".btn_pop01").click(function () {
-    $(".layer-00").hide();
-    $(".layer-01").show();
-  });
-  $(".btn_pop02").click(function () {
-    $(".layer-00").hide();
-    $(".layer-02").show();
-  });
-  $(".btn_pop03").click(function () {
-    $(".layer-00").hide();
-    $(".layer-03").show();
-  });
-  $(".btn_pop04").click(function () {
-    $(".layer-00").hide();
-    $(".layer-04").show();
-  });
-  $(".btn_pop05").click(function () {
-    $(".layer-00").hide();
-    $(".layer-05").show();
-  });
+  let btnPop = $(".btn_pop");
+  for(let i = 1; i < btnPop.length+1; i++) {
+    $(".btn_pop0"+i).on("click", function(){
+      $(".layer-00").hide();
+      $(".layer-0"+i).show();
+    });
+  }
+
 });

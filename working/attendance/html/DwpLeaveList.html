@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>MetaPay</title>
+  
+  <link rel="stylesheet" href="../dist/css/dwp.css">
+  <link rel="stylesheet" href="../dist/css/common_9900.css">
+  <link rel="stylesheet" href="../dist/css/jquery-ui.css">
+  <link rel="stylesheet" href="../dist/font/NotoSansKR-Regular.otf">
+</head>
+
+<body>
+  <!-- GNB -->
+  <div id="gnb">
+    <ul>
+      <li><a href="./DwpAttendFm.html">[현장관리자]근태 관리 (일용직)</a></li>
+      <li><a href="./DwpContractFm.html">근로 계약 입력</a></li>
+      <li><a href="./DwpContractListFm.html">근로 계약 대장 조회</a></li>
+      <li><a href="./DwpCwAttendFm.html">근태 관리 (계약직)</a></li>
+      <li><a href="./DwpCwHelper.html">계약직 헬퍼 등록</a></li>
+      <li><a href="./DwpCwHelperList.html">계약직 헬퍼 등록 대장</a></li>
+      <li><a href="./DwpLeave.html">휴가 신청</a></li>
+      <li><a href="./DwpLeaveList.html">휴가 신청 현황</a></li>
+      <li><a href="./DwpAttendHr.html">[HR 관리자]근태 관리 (일용직)</a></li>
+      <li><a href="./DwpLeaveAppr.html">휴가 승인</a></li>
+    </ul>
+    <button id="btnMenuClose">X</button>
+  </div>
+  <!-- 컨텐츠영역 : pc -->
+  <div class="newContents">
+    <button id="btnMenu">
+      <span></span><span></span><span></span>
+    </button>
+    <!-- 타이틀 영역 -->
+    <h2 class="subTitle">휴가 신청 현황</h2>
+    <!--// 타이틀 영역 -->
+
+    <div class="searchWrapper">
+      <div class="selectArea">
+        <div class="selectBox">
+          <p class="selected">이름으로 검색</p>
+          <ul>
+            <li>휴대전화로 검색</li>
+            <li>가나다로 검색</li>
+            <li>다른걸로 검색</li>
+          </ul>
+        </div>
+        <input type="text">
+      </div>
+
+      <div class="dateArea">
+        <input type="text" id="datepicker01" class="datepicker">
+        <span class="txtHipen">-</span>
+        <input type="text" id="datepicker02" class="datepicker">
+      </div>
+      <button class="btnSearch">검색</button>
+    </div>
+
+    <div class="tableWrapper">
+      <div class="tableTop">
+        <p class="total">총 인원 <b>250</b>명</p>
+      </div>
+      <div class="tableOutline">
+        <table class="tableHorizen_type1" id="annualLeaveList">
+          <colgroup>
+            <col width="12%" />
+            <col width="12%" />
+            <col width="12%" />
+            <col width="12%" />
+            <col width="12%" />
+            <col width="12%" />
+            <col width="16%" />
+            <col width="12%" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">신청일</th>
+              <th scope="col">캠프</th>
+              <th scope="col">근로자명 <span class="sort down" id="sortName" onclick="sortTable()"></span></th>
+              <th scope="col">휴가 구분 <span class="sort down"></span></th>
+              <th scope="col">휴가사용일수</th>
+              <th scope="col">사유</th>
+              <th scope="col">증빙서류</th>
+              <th scope="col">확정 여부</th>
+            </tr>
+          </thead>
+          <tbody id="tbody">
+            <tr>
+              <td>2024-07-17</td>
+              <td>SUB-AYG1</td>
+              <td>이순신</td>
+              <td>연차</td>
+              <td>1</td>
+              <td>공가</td>
+              <td class="ellipsis">병력동원훈련소집 통지서 병력동원훈련소집 통지서 병력동원훈련소집 통지서 병력동원훈련소집 통지서</td>
+              <td><span class="redTxt">미확정</span></td>
+            </tr>
+            <tr>
+              <td>2024-07-20</td>
+              <td>SUB-AYG1</td>
+              <td>김길동</td>
+              <td>반차</td>
+              <td>0.5</td>
+              <td>공가</td>
+              <td>-</td>
+              <td><span class="blueTxt">확정</span></td>
+            </tr>
+            <tr>
+              <td>2024-07-30</td>
+              <td>SUB-AYG2</td>
+              <td>권나라</td>
+              <td>반차</td>
+              <td>0.5</td>
+              <td>공가</td>
+              <td>-</td>
+              <td><span class="blueTxt">확정</span></td>
+            </tr>
+            <tr>
+              <td>2024-07-01</td>
+              <td>SUB-AYG2</td>
+              <td>새로이</td>
+              <td>반차</td>
+              <td>0.5</td>
+              <td>공가</td>
+              <td>-</td>
+              <td><span class="blueTxt">확정</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!--// 컨텐츠영역 : pc -->
+  <script type="text/javascript" src="../dist/js/jquery.min.js"></script>
+  <script type="text/javascript" src="../dist/js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="../dist/js/dwp.js"></script>
+  <script type="text/javascript">
+    // selecBox
+    function selectBox() {
+      $(".selectBox p").off('click').on('click', function(){
+        $(this).parent().children("ul").stop().slideToggle('');
+      });
+      $(".selectBox ul li").off('click').on('click', function(){
+        let text = $(this).text();
+        $(this).parents(".selectBox").children("p").text(text);
+        $(this).parent("ul").stop().slideUp();
+      });
+    }
+
+    // datepicker
+    $( function() {
+      $( "#datepicker01").datepicker({
+        showOn: "button",
+        buttonImage: "../dist/images/iconDate.png",
+        buttonImageOnly: true,
+        buttonText: "Select date",
+        dateFormat: "yy-mm-dd",
+      });
+
+      $( "#datepicker02").datepicker({
+        showOn: "button",
+        buttonImage: "../dist/images/iconDate.png",
+        buttonImageOnly: true,
+        buttonText: "Select date",
+        dateFormat: "yy-mm-dd",
+      });
+
+      // 당일날짜 가져오기
+      let today = new Date();
+      let today_year = today.getFullYear();
+      let today_month = today.getMonth();
+      let today_date = today.getDate() + 1;
+      if(today_month < 11 ) {
+        today_month = "0" + (today_month + 1) ;
+      } 
+      $('.datepicker').val( today_year + "-" + today_month + "-" + today_date);
+    });
+
+    let sortType = 'asc';
+    function sortTable() {
+
+      let table = document.getElementById('annualLeaveList');
+      let rows = table.rows;
+      let chkSort = true;
+      let sortType = 'asc';
+      for(let i = 1; i < (rows.length-1); i++){
+        let row = rows[i];
+        // console.log(row);
+        let fCell = row.cells[2].innerHTML.toLowerCase();
+        let sCell = row.nextElementSibling.cells[2].innerHTML.toLowerCase();
+
+          console.log('fCell : ', fCell)
+          console.log('sCell : ', sCell)
+
+          if(fCell > sCell){
+          console.log('더 큰애는 : ', fCell)
+          } 
+
+        //
+        /*
+        if((sortType === 'asc' && fCell > sCell) || (sortType === 'desc' && fCell < sCell)) {
+          // 오름차순(asc)  - 가나다
+          console.log('오름차순 :', fCell, sCell);
+          sortType = 'desc';
+          row.parentNode.insertBefore(row.nextSibling, row);
+
+          // console.log(sortType)
+        }
+          */
+      }
+
+    }
+
+    $(document).ready(function(){
+      // selectBox
+      selectBox();    
+
+      // sort
+      $(".tableOutline th .sort").click(function(){
+        if($(this).hasClass('down')){
+          $(this).addClass('up');
+          $(this).removeClass('down');
+        }else{
+          $(this).addClass('down');
+          $(this).removeClass('up');
+        }
+      });
+/*
+      let tr = $("tbody tr");
+      let nameArray = [];  
+      tr.each(function(){
+        let nameList = $(this).children("td").eq(2).text();
+        nameArray.push(nameList)
+        //console.log(nameArray);
+      });
+      */
+      let sortType = 'asc';
+      function sortTable() {
+
+        let table = document.getElementById('annualLeaveList');
+        let rows = table.rows;
+        let chkSort = true;
+        let sortType = 'asc';
+        for(let i = 1; i < (rows.length-1); i++){
+          let row = rows[i];
+          // console.log(row);
+          let fCell = row.cells[2].innerHTML.toLowerCase();
+          let sCell = row.nextElementSibling.cells[2].innerHTML.toLowerCase();
+
+           console.log('fCell : ', fCell)
+           console.log('sCell : ', sCell)
+
+           if(fCell > sCell){
+            console.log('더 큰애는 : ', fCell)
+           } 
+
+          //
+          /*
+          if((sortType === 'asc' && fCell > sCell) || (sortType === 'desc' && fCell < sCell)) {
+            // 오름차순(asc)  - 가나다
+            console.log('오름차순 :', fCell, sCell);
+            sortType = 'desc';
+            row.parentNode.insertBefore(row.nextSibling, row);
+
+            // console.log(sortType)
+          }
+            */
+        }
+
+      }
+      $("#sortName").click(function(){
+        //sortType = (sortType === 'asc') ? 'desc' : 'asc';
+        /*
+        while(chkSort) {
+          for(let i = 1; i < (rows.length - 1); i++){
+            let row = rows[i];
+            console.log(row)
+            let fCell = row.cells[2].innerHTML.toLowerCase();
+            let sCell = row.nextElementSibling.cells[2].innerHTML.toLowerCase();
+
+            
+            if((sortType === 'asc' && fCell > sCell) || (sortType === 'desc' && fCell < sCell)){
+              row.parentNode.insertBefore(row.nextSibling, row);
+              chkSort = true;
+            }
+            
+          }
+        }
+        */
+        
+      });
+    });
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+	<title>MetaPay</title>
+  
+  <link rel="stylesheet" href="../dist/css/common_9900.css">
+  <link rel="stylesheet" href="../dist/css/jquery-ui.css">
+  <link rel="stylesheet" href="../dist/css/mda.css">
+  <link rel="stylesheet" href="../dist/font/NotoSansKR-Regular.otf">
+
+  <script type="text/javascript" src="../dist/js/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="mda-container">
+    <!-- new -->
+		<div id="mda-chat" class="chat_main_bg">
+			<!--/* 챗봇 영역 */-->		
+			<div id="mda-chat_top" class="chat_header">
+				<!--/* 챗봇 탑 */-->
+				<h1>Meta-ITSM∙AI</h1>
+        <div class="rightShortcut">
+          <a href="#n" class="mda-btn_more"></a>
+          <a href="#n" class="mda-btn_close"></a>
+        </div>
+			</div>      
+		
+			<div id="mda-chat_middle">
+        <!-- main 화면 : S -->
+				<div class="message_request">
+					<pre>경비시스템의 비밀번호를 바꿔 줘</pre>
+				</div>
+
+				<div class="message_response">
+					<pre>비밀번호 변경 요청을 진행하겠습니다.</pre>
+				</div>
+
+				<ul class="requestedTerm_outline">
+					<li><p>법인 선택 <span></span></p> 
+						<select name="" id="">
+							<option value="">법인1</option>
+							<option value="">법인1</option>
+							<option value="">법인1</option>
+							<option value="">법인1</option>
+						</select>
+					</li>
+					<li><p>요청 범주 <span></span></p> <input type="text"></li>
+					<li><p>상세 요청 범주 <span></span></p> <input type="text"></li>
+					<li><p>첨부 파일</p> <input type="file"></li>
+				</ul>
+
+				<div class="btn_outline">
+					<button class="btn_wh">취소</button>
+					<button class="btn_blue">등록</button>
+				</div>
+
+				<div class="requestedTerm_outline">
+					<dl class="requested_contents">
+						<dt>요청내용</dt>
+						<dd>
+							<p>등록인</p>
+							<span>김길동/품질관리팀</span>
+						</dd>
+						<dd>
+							<p>요청 내용</p>
+							<span>비밀번호 재발급</span>
+						</dd>
+						<dd>
+							<p>요청 일시</p>
+							<span>2025.02.10</span>
+						</dd>
+					</dl>
+				</div>
+
+				<div class="requestedTerm_outline">
+					<dl class="complete_box">
+						<dt>정상 등록되었습니다.</dt>
+						<dd>비밀번호 재발급에는 <span>4~5일의 시간이 소요</span>되며, 
+							진행상황은 <u>요청현황확인</u> 메뉴에서 확인 가능합니다. </dd>
+					</dl>
+				</div>
+
+				<div class="btn_outline">
+					<button class="btn_wh">종료</button>
+					<button class="btn_blue" onclick="location.href='./aiDesk_step2.html'">요청현황확인</button>
+				</div>
+				
+        <!-- main 화면 : E -->
+			</div>
+			
+			
+			<div id="mda-chat_bottom">
+				<!--/* 대화 입력 */-->
+				<div class="chat_message">
+					<textarea id="chat_massage_input" class="message_textarea" rows="1" placeholder="불편사항을 입력해 주세요."></textarea>
+					<input type="button" id="chat_massage_send" class="btn_send" value="실행"></input>
+				</div>
+				<div id="chat_massage_time"></div>
+			</div>
+		</div>
+
+  <a href="#n" id="icon-chatbot"></a>
+
+  <script type="text/javascript"> 
+    $(document).ready(function(){
+      $(".message_textarea").focus(function() {
+        $(this).parent().children('.btn_send').addClass("on");
+      });
+      $(".message_textarea").focusout(function() {
+        $(this).parent().children('.btn_send').removeClass("on");
+      });
+    });
+  </script>
+</body>
+</html>

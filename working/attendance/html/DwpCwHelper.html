@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>MetaPay</title>
+  
+  <link rel="stylesheet" href="../dist/css/dwp.css">
+  <link rel="stylesheet" href="../dist/css/common_9900.css">
+  <link rel="stylesheet" href="../dist/css/jquery-ui.css">
+  <link rel="stylesheet" href="../dist/font/NotoSansKR-Regular.otf">
+</head>
+
+<body>
+  <!-- GNB -->
+  <div id="gnb">
+    <ul>
+      <li><a href="./DwpAttendFm.html">[현장관리자]근태 관리 (일용직)</a></li>
+      <li><a href="./DwpContractFm.html">근로 계약 입력</a></li>
+      <li><a href="./DwpContractListFm.html">근로 계약 대장 조회</a></li>
+      <li><a href="./DwpCwAttendFm.html">근태 관리 (계약직)</a></li>
+      <li><a href="./DwpCwHelper.html">계약직 헬퍼 등록</a></li>
+      <li><a href="./DwpCwHelperList.html">계약직 헬퍼 등록 대장</a></li>
+      <li><a href="./DwpLeave.html">휴가 신청</a></li>
+      <li><a href="./DwpLeaveList.html">휴가 신청 현황</a></li>
+      <li><a href="./DwpAttendHr.html">[HR 관리자]근태 관리 (일용직)</a></li>
+      <li><a href="./DwpLeaveAppr.html">휴가 승인</a></li>
+    </ul>
+    <button id="btnMenuClose">X</button>
+  </div>
+  <!-- 컨텐츠영역 : pc -->
+  <div class="newContents">
+    <button id="btnMenu">
+      <span></span><span></span><span></span>
+    </button>
+    <!-- 타이틀 영역 -->
+    <h2 class="subTitle">계약직 헬퍼 등록</h2>
+    <!--// 타이틀 영역 -->
+
+    <div class="searchWrapper">
+      <div class="selectArea">
+        <div class="selectBox">
+          <p class="selected">이름으로 검색</p>
+          <ul>
+            <li>휴대전화로 검색</li>
+            <li>가나다로 검색</li>
+            <li>다른걸로 검색</li>
+          </ul>
+        </div>
+        <input type="text">
+      </div>
+
+      <div class="dateArea">
+        <input type="text" id="datepicker01" class="datepicker">
+        <span class="txtHipen">-</span>
+        <input type="text" id="datepicker02" class="datepicker">
+      </div>
+      <button class="btnSearch">검색</button>
+    </div>
+
+    <div class="tableWrapper">
+      <div class="tableTop">
+        <p class="total">총 인원 <b>250</b>명</p>
+      </div>
+      <div class="tableOutline">
+        <table class="tableHorizen_type1">
+          <colgroup>
+            <col width="4%" />
+            <col width="16%" />
+            <col width="16%" />
+            <col width="16%" />
+            <col width="16%" />
+            <col width="16%" />
+            <col width="16%" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col"><input type="checkbox" name="" id="allCheck"></th>
+              <th scope="col">근로자명</th>
+              <th scope="col">캠프명</th>
+              <th scope="col">주민번호</th>
+              <th scope="col">휴대전화</th>
+              <th scope="col">시작일</th>
+              <th scope="col">종료일</th>
+            </tr>
+          </thead>
+          <tbody id="tbody">
+            <tr>
+              <td><input type="checkbox" name="lineCheck"></td>
+              <td><input type="text" placeholder="입력"></td>
+              <td>
+                <div class="selectBox">
+                  <p class="selected">SUB-AVG1</p>
+                  <ul>
+                    <li>SUB-AVG1</li>
+                    <li>SUB-AVG1</li>
+                    <li>SUB-AVG1</li>
+                    <li>SUB-AVG1</li>
+                    <li>SUB-AVG1</li>
+                  </ul>
+                </div>
+              </td>
+              <td><input type="text" placeholder="- 포함"></td>
+              <td><input type="text" placeholder="입력"></td>
+              <td>
+                <div class="dateArea">
+                  <input type="text" id="datepicker03" class="datepicker">
+                </div>
+              </td>
+              <td>
+                <div class="dateArea">
+                  <input type="text" id="datepicker04" class="datepicker">
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tableBottom">
+        <div class="buttonArea">
+          <button class="btnDel" id="btnDel">삭제</button>
+          <button class="btnAdd" onclick="addTd()">행 추가</button>
+        </div>
+        <div class="buttonArea">
+          <button class="btnEnd btn btn_blue">마감</button>
+          <button class="btnSave btn btn_blue">저장</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--// 컨텐츠영역 : pc -->
+
+  <script type="text/javascript" src="../dist/js/jquery.min.js"></script>
+  <script type="text/javascript" src="../dist/js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="../dist/js/dwp.js"></script>
+  <script type="text/javascript">
+    // selecBox
+    function selectBox() {
+      $(".selectBox p").off('click').on('click', function(){
+        $(this).parent().children("ul").stop().slideToggle('');
+      });
+      $(".selectBox ul li").off('click').on('click', function(){
+        let text = $(this).text();
+        $(this).parents(".selectBox").children("p").text(text);
+        $(this).parent("ul").stop().slideUp();
+      });
+    }
+
+    // 삭제
+    function removeTd() {
+      $("#btnDel").off('click').on("click",function(){
+        $('input:checkbox[name=lineCheck]').each(function(){
+          if($(this).is(':checked')){
+            $(this).parents('tr').remove();
+          }
+        });
+      });
+    }
+    
+    // 행추가
+    function addTd() {
+      tbodyTd = `
+      <tr>
+        <td><input type="checkbox" name="lineCheck"></td>
+        <td>
+          <div class="dateArea">
+            <input type="date" class="date">
+            <p class="iconDate"></p>
+          </div>
+        </td>
+        <td>
+          <div class="selectBox">
+            <p class="selected">이름순</p>
+            <ul>
+              <li>신청일순</li>
+              <li>신청일순</li>
+              <li>신청일순</li>
+              <li>신청일순</li>
+              <li>신청일순</li>
+            </ul>
+          </div>
+        </td>
+        <td><input type="text" placeholder="입력"></td>
+        <td><input type="phone" placeholder="- 없이 입력"></td>
+        <td>
+          <div class="selectBox">
+            <p class="selected">W2</p>
+            <ul>
+              <li>W2</li>
+              <li>W2</li>
+              <li>W2</li>
+              <li>W2</li>
+              <li>W2</li>
+            </ul>
+          </div>
+        </td>
+        <td>
+          <div class="selectBox">
+            <p class="selected">선택</p>
+            <ul>
+              <li>연차</li>
+              <li>반차</li>
+              <li>예비군 훈련</li>
+              <li>경조</li>
+              <li>기타</li>
+            </ul>
+          </div>
+        </td>
+        <td><input type="text" disabled placeholder="-"></td>
+        <td><input type="text" placeholder="필수 입력"></td>
+        <td>
+          <div class="fileArea">
+            <input type="text" class="typeFile_Text" id="typeFile_Text" placeholder="예비군훈련/경조 시 첨부" readonly>
+            <input type="file" class="typeFile" id="typeFile">
+            <label for="typeFile" class="iconFile"></label>
+          </div>
+        </td>
+      </tr>
+      `
+      const tbody = document.getElementById("tbody");
+      tbody.insertAdjacentHTML("afterbegin", tbodyTd);
+
+      selectBox();
+      removeTd();
+
+      fileUpload();
+    }
+    
+
+    // datepicker
+    $( function() {
+      $("#datepicker01").datepicker({
+        showOn: "button",
+        buttonImage: "../dist/images/iconDate.png",
+        buttonImageOnly: true,
+        buttonText: "Select date",
+        dateFormat: "yy-mm-dd",
+      });
+
+      $("#datepicker02").datepicker({
+        showOn: "button",
+        buttonImage: "../dist/images/iconDate.png",
+        buttonImageOnly: true,
+        buttonText: "Select date",
+        dateFormat: "yy-mm-dd",
+      });
+      
+      $("#datepicker03").datepicker({
+        showOn: "button",
+        buttonImage: "../dist/images/iconDate.png",
+        buttonImageOnly: true,
+        buttonText: "Select date",
+        dateFormat: "yy-mm-dd",
+      });
+      
+      $("#datepicker04").datepicker({
+        showOn: "button",
+        buttonImage: "../dist/images/iconDate.png",
+        buttonImageOnly: true,
+        buttonText: "Select date",
+        dateFormat: "yy-mm-dd",
+      });
+
+      $("#format").on( "change", function() {
+        $( "#datepicker01" ).datepicker();
+      });
+
+      // 당일날짜 가져오기
+      let today = new Date();
+      let today_year = today.getFullYear();
+      let today_month = today.getMonth();
+      let today_date = today.getDate() + 1;
+      if(today_month < 11 ) {
+        today_month = "0" + (today_month + 1) ;
+      } 
+      $('.datepicker').val( today_year + "-" + today_month + "-" + today_date);
+
+
+    });
+
+
+    $(document).ready(function(){
+      // 전체 checkbox
+      $('#allCheck').click(function(){
+        $(this).is(":checked") == true 
+          ? $('input:checkbox[name=lineCheck]').prop("checked", true)
+          : $('input:checkbox[name=lineCheck]').prop("checked", false);
+      });
+
+      // selectBox
+      selectBox();    
+      removeTd();
+
+
+
+      $(".newContents .timeArea").click(function(e){
+        $(this).children('.selectTime').stop().slideDown();       
+      });
+      $(".newContents .timeArea ul li").click(function(){
+        $(this).parent('ul').children('li').removeClass('on');
+        $(this).addClass('on');
+      });
+      $(".newContents .timeArea ul:first-child li").click(function(){
+        let hour = $(this).text();
+        console.log("Hour : " + hour);
+        $(this).parents('.timeArea').children(".inputTime").val(hour + " : 00");
+        /*
+        if(minutes !== notdefined){
+          $(".inputTime").val(hour + " : " + minutes);
+        }else{
+          $(".inputTime").val(hour + " : 00");
+        }
+        */
+        $(".newContents .timeArea ul:last-child li").click(function(){
+          let minutes = $(this).text();
+          console.log("minutes : " + minutes);
+          $(this).parents('.timeArea').children(".inputTime").val(hour + " : " + minutes);
+        });
+      });
+      /*
+      $(".newContents .timeArea ul:last-child li").click(function(){
+        let minutes = $(this).text();
+        console.log("minutes : " + minutes);
+        $(".inputTime").val(hour);
+
+      });
+      */
+
+
+      $('html').click(function(e){
+        if(!$(e.target).hasClass('inputTime') && !$(e.target).hasClass('on')){
+          $('.selectTime').stop().slideUp();
+        }
+      });
+    });
+
+  </script>
+</body>
+</html>

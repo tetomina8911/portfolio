@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+	<title>MetaPay</title>
+  
+  <link rel="stylesheet" href="../dist/css/common_9900.css">
+  <link rel="stylesheet" href="../dist/css/jquery-ui.css">
+  <link rel="stylesheet" href="../dist/css/itsm.css">
+  <link rel="stylesheet" href="../dist/font/NotoSansKR-Regular.otf">
+
+  <script type="text/javascript" src="../dist/js/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="itsmcontainer">
+    <!-- new -->
+		<div id="itsm-chat" class="chat_main_bg">
+			<!--/* 챗봇 영역 */-->			
+			<div id="itsm-chat_top" class="chat_header">
+				<!--/* 챗봇 탑 */-->
+				<h1>Meta-ITSM∙AI</h1>
+        <div class="rightShortcut">
+          <a href="#n" class="itsmbtn_more"></a>
+          <a href="#n" class="itsmbtn_close"></a>
+        </div>
+			</div>
+					
+			<div id="itsm-chat_middle" class="step3">
+        <!-- main 화면 : S -->
+				<h4 class="requested_title">나의 할일 상세</h4>
+				<!-- description
+					상세 페이지는 똑같으므로 복제해서 써주세요
+					(타이틀만 변경처리)
+					1. 나의 할일 상세
+					2. 진행 현황 상세
+				-->
+				<div class="requestedTerm_outline">
+					<dl class="requested_contents">
+						<dd>
+							<p>요청일</p>
+							<span>02.11</span>
+						</dd>
+						<dd>
+							<p>내용</p>
+							<span>비밀번호 변경</span>
+						</dd>
+					</dl>
+					<button class="btn_ing">진행중</button>
+				</div>
+
+				<div class="requestedTerm_outline">
+					<dl class="requested_contents">
+						<dd>
+							<p>법인</p>
+							<span>풀무원</span>
+						</dd>
+						<dd>
+							<p>요청범주</p>
+							<span>업무시스템</span>
+						</dd>
+						<dd>
+							<p>상세요청범주</p>
+							<span>ITSM</span>								
+						</dd>
+						<dd>
+							<p>내용</p>
+							<span>데이터 변경/삭제 요청에 대해서는 현업부서장의 
+								결재가 없을 경우 반려처리됩니다. DB 링크 요청
+								은 상대방 DB 현업 오너의 결재가 필요합니다.</span>
+						</dd>
+						<dd>
+							<p>첨부파일</p>
+							<span>-</span>
+						</dd>
+					</dl>
+				</div>
+        <!-- main 화면 : E -->
+			</div>
+			
+			<div id="itsm-chat_bottom">
+				<!--/* 대화 입력 */-->
+				<div class="chat_message">
+					<textarea id="chat_massage_input" class="message_textarea" rows="1" placeholder="불편사항을 입력해 주세요.">경비 시스템의 비밀번호를 바꿔 줘</textarea>
+					<input type="button" id="chat_massage_send" class="btn_send" value="실행"></input>
+				</div>
+				<div id="chat_massage_time"></div>
+			</div>
+		</div>
+
+  <a href="#n" id="icon-chatbot"></a>
+
+  <script type="text/javascript"> 
+    $(document).ready(function(){
+      $(".message_textarea").focus(function() {
+        $(this).parent().children('.btn_send').addClass("on");
+      });
+      $(".message_textarea").focusout(function() {
+        $(this).parent().children('.btn_send').removeClass("on");
+      });
+    });
+  </script>
+</body>
+</html>

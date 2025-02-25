@@ -1,14 +1,14 @@
 @charset "utf-8";
 
 /* INNTRO */
-#intro--container {
+#intro-container {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
 }
-#intro--container .hello-box {
+#intro-container .hello-box {
   position: relative;
   display: flex;
   align-items: center;
@@ -26,7 +26,7 @@
   }
 }
 
-#intro--container .hello-box span:nth-child(1) {
+#intro-container .hello-box span:nth-child(1) {
   position: absolute;
   left: 0;
   top: 0;
@@ -40,7 +40,7 @@
     width: 100%;
   }
 }
-#intro--container .hello-box span:nth-child(2) {
+#intro-container .hello-box span:nth-child(2) {
   position: absolute;
   right: 0;
   top: 0;
@@ -54,7 +54,7 @@
     height: 100%;
   }
 }
-#intro--container .hello-box span:nth-child(3) {
+#intro-container .hello-box span:nth-child(3) {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -68,7 +68,7 @@
     width: 100%;
   }
 }
-#intro--container .hello-box span:nth-child(4) {
+#intro-container .hello-box span:nth-child(4) {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -83,7 +83,7 @@
   }
 }
 
-#intro--container .hello-box .txt1 {
+#intro-container .hello-box .txt1 {
   animation: shadow 1s 3.5s forwards;
 }
 @keyframes shadow {
@@ -92,7 +92,7 @@
   }
 }
 
-#intro--container .hello-box .txt2 {
+#intro-container .hello-box .txt2 {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -150,21 +150,26 @@ header nav ul li.active a {
 }
 
 /* Portfolio */
-.Portfolio--conatiner {
+.pp-tableCell {
+  background: #fff;
+}
+.Portfolio-conatiner {
   width: 100vw;
-  height: 100%;
-  padding: 8vw 4vw 0;
+  padding: 0 4vw;
   background: #fff;
   box-sizing: border-box;
 }
 
-.portfolio--wrapper {
+.portfolio-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-.portfolio--wrapper li {
+.portfolio-wrapper li {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 16.67vw;
   height: 9.375vw;
   margin: 0 0.7vw 1vw;
@@ -174,7 +179,7 @@ header nav ul li.active a {
   cursor: pointer;
   overflow: hidden;
 }
-.portfolio--wrapper li .shadow__box {
+.portfolio-wrapper li .shadow__box {
   position: absolute;
   left: 0;
   top: 0;
@@ -186,53 +191,53 @@ header nav ul li.active a {
   background: rgba(0, 0, 0, 0.6);
   z-index: 10;
 }
-.portfolio--wrapper li .shadow__box dl dt {
+.portfolio-wrapper li .shadow__box dl dt {
   padding: 2.5vw 0 0;
   font-size: 0.9vw;
   font-weight: 600;
   font-family: "Noto Sans KR";
 }
-.portfolio--wrapper li .shadow__box dl dd {
+.portfolio-wrapper li .shadow__box dl dd {
   padding: 0.1vw 0 1vw;
   font-size: 0.75vw;
   font-family: "Noto Sans KR";
 }
 
 /* About */
-.About--container {
+.About-container {
   display: flex;
   justify-content: center;
   height: 100vh;
   background: url("../images/visual-bg.webp") no-repeat center;
   background-size: cover;
 }
-.About--container .About--wrapper {
+.About-container .About-wrapper {
   position: relative;
   display: flex;
   align-items: center;
   box-sizing: border-box;
 }
-.About--container .About--wrapper .its-me {
+.About-container .About-wrapper .its-me {
   width: 13.0209vw;
   border-radius: 20px;
   overflow: hidden;
 }
-.About--container .About--wrapper ul {
+.About-container .About-wrapper ul {
   padding: 0 0 0 3vw;
 }
 
-.About--container .About--wrapper ul li {
+.About-container .About-wrapper ul li {
   display: flex;
   flex-wrap: wrap;
   line-height: 1.8;
   font-size: 0.85vw;
 }
 
-.About--container .About--wrapper ul.information li:nth-child(3) {
+.About-container .About-wrapper ul.information li:nth-child(3) {
   margin: 0 0 3vw;
 }
 
-.About--container .About--wrapper ul.career li span {
+.About-container .About-wrapper ul.career li span {
   width: 170px;
   font-weight: 600;
   text-align: center;
@@ -332,7 +337,7 @@ header nav ul li.active a {
     * media : 1024
 ------------------------------------------------- */
 @media screen and (max-width: 1024px) {
-  .portfolio--wrapper li {
+  .portfolio-wrapper li {
     width: 20vw;
     height: 11.25vw;
   }
@@ -353,46 +358,46 @@ header nav ul li.active a {
   }
 
   /* Portfolio */
-  .Portfolio--conatiner {
+  .Portfolio-conatiner {
     height: 100vh;
     padding: 12vw 4vw 0;
   }
 
-  .portfolio--wrapper li {
+  .portfolio-wrapper li {
     width: 40vw;
     height: 8vh;
   }
 
   /* About */
-  .About--container .About--wrapper {
+  .About-container .About-wrapper {
     flex-wrap: wrap;
     justify-content: center;
     padding: 12vw 0 0;
   }
-  .About--container .About--wrapper .its-me {
+  .About-container .About-wrapper .its-me {
     width: 30vw;
     margin: 0 3vw 0 0;
     border-radius: 2.778vw;
   }
 
-  .About--container .About--wrapper ul {
+  .About-container .About-wrapper ul {
     padding: 0;
   }
-  .About--container .About--wrapper ul li {
+  .About-container .About-wrapper ul li {
     display: flex;
     flex-wrap: wrap;
     line-height: 1.8;
     font-size: 2.5vw;
   }
 
-  .About--container .About--wrapper ul.career {
+  .About-container .About-wrapper ul.career {
     align-self: stretch;
   }
-  .About--container .About--wrapper ul.career li {
+  .About-container .About-wrapper ul.career li {
     margin: 0 0 1.2vw;
     padding: 0 7vw;
   }
-  .About--container .About--wrapper ul.career li span {
+  .About-container .About-wrapper ul.career li span {
     width: 20vw;
     margin-right: 2vw;
   }
@@ -440,7 +445,7 @@ header nav ul li.active a {
     * media : 375
 ------------------------------------------------- */
 @media screen and (max-width: 375px) {
-  .About--container .About--wrapper ul.career li span {
+  .About-container .About-wrapper ul.career li span {
     width: 22vw;
   }
 }
@@ -449,14 +454,14 @@ header nav ul li.active a {
     * media : 320
 ------------------------------------------------- */
 @media screen and (max-width: 320px) {
-  .About--container .About--wrapper .its-me {
+  .About-container .About-wrapper .its-me {
     width: 25vw;
   }
-  .About--container .About--wrapper ul.career li {
+  .About-container .About-wrapper ul.career li {
     margin: 0 0 1.2vw;
     padding: 0 5vw;
   }
-  .About--container .About--wrapper ul.career li span {
+  .About-container .About-wrapper ul.career li span {
     width: 28vw;
   }
 }

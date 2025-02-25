@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+	<title>MetaPay</title>
+  
+  <link rel="stylesheet" href="../dist/css/common_9900.css">
+  <link rel="stylesheet" href="../dist/css/jquery-ui.css">
+  <link rel="stylesheet" href="../dist/css/mda.css">
+  <link rel="stylesheet" href="../dist/font/NotoSansKR-Regular.otf">
+
+  <script type="text/javascript" src="../dist/js/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="mda-container">
+    <!-- new -->
+		<div id="mda-chat" class="chat_main_bg">
+			<!--/* 챗봇 영역 */-->		
+			<div id="mda-chat_top" class="chat_header">
+				<!--/* 챗봇 탑 */-->
+				<h1>Meta-ITSM∙AI</h1>
+        <div class="rightShortcut">
+          <a href="#n" class="mda-btn_more"></a>
+          <a href="#n" class="mda-btn_close"></a>
+        </div>
+			</div>      
+					
+			<div id="mda-chat_middle">
+        <!-- main 화면 : S -->
+        <div class="chat_main">
+          <dl>
+            <dt>간편등록, 빠른처리</dt>
+            <dd>Meta-<b>ITSM∙AI</b></dd>
+						<dd class="text2">무엇을 도와드릴까요?</dd>
+          </dl>
+          <ul>
+            <li onclick="location.href='./aiDesk_step2.html'">
+              <p class="icon money"><img src="../dist/img/common/icon-file.png" alt=""></p>
+              <p class="text">요청 현황 확인</p>
+            </li>
+            <li onclick="location.href='./aiDesk_step1.html'">
+              <p class="icon paper"><img src="../dist/img/common/icon-regi.png" alt=""></p>
+              <p class="text">요청 등록</p>
+            </li>
+            <li>
+              <p class="icon book"><img src="../dist/img/common/icon-user.png" alt=""></p>
+              <p class="text">담당자 조회</p>
+            </li>
+          </ul>
+        </div>
+        <!-- main 화면 : E -->
+			</div>
+			
+			<div id="mda-chat_bottom">
+				<!--/* 대화 입력 */-->
+				<div class="chat_message">
+					<textarea id="chat_massage_input" class="message_textarea" rows="1" placeholder="불편사항을 입력해 주세요."></textarea>
+					<input type="button" id="chat_massage_send" class="btn_send" value="실행"></input>
+				</div>
+				<div id="chat_massage_time"></div>
+			</div>
+		</div>
+
+  <a href="#n" id="icon-chatbot"></a>
+
+  <script type="text/javascript"> 
+    $(document).ready(function(){
+      $(".message_textarea").focus(function() {
+        $(this).parent().children('.btn_send').addClass("on");
+      });
+      $(".message_textarea").focusout(function() {
+        $(this).parent().children('.btn_send').removeClass("on");
+      });
+    });
+  </script>
+</body>
+</html>
