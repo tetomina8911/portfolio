@@ -1,0 +1,136 @@
+{
+    "products":[
+        {
+            "id":0,
+            "img":"/public/images/liraEarrings.png",
+            "title":"Lira Earrings",
+            "price":"20,00",
+            "choice":true,
+            "new":true,
+            "color":["Gold","Silver"],
+            "size":["S","M","L"]
+
+        },
+        {
+            "id":1,
+            "img":"/public/images/halEarrings.png",
+            "title":"Hal Earrings",
+            "price":"25,00",
+            "choice":true,
+            "new":true,
+            "color":["Gold","Silver","Rose Gold"],
+            "size":["S","M","L"]
+
+        },
+        {
+            "id":2,
+            "img":"/public/images/kaedeHairPin.png",
+            "title":"Kaede Hair Pin Set Of 3",
+            "price":"30,00",
+            "choice":false,
+            "new":true,
+            "color":["Gold","Rose Gold"],
+            "size":["S","M","L"]
+
+        },
+        {
+            "id":3,
+            "img":"/public/images/hairPinSet.png",
+            "title":"Hair Pin Set Of 3",
+            "price":"30,00",
+            "choice":false,
+            "new":true,
+            "color":["Gold","Silver"],
+            "size":["S","M","L"]
+
+        },
+        {
+            "id":4,
+            "img":"/public/images/plaineNecklace.png",
+            "title":"Planine Necklace",
+            "price":"19,00",
+            "choice":true,
+            "new":false,
+            "color":["Gold","Silver","Rose Gold"],
+            "size":["S","M","L"]
+
+        },
+        {
+            "id":5,
+            "img":"/public/images/yukiHairPin.png",
+            "title":"Yuki Hair Pin Set of 3",
+            "price":"29,00",
+            "choice":false,
+            "new":false,
+            "color":["Gold","Silver","Rose Gold"],
+            "size":["S","M","L"]
+
+        },
+        {
+            "id":6,
+            "img":"/public/images/liraEarrings.png",
+            "title":"Lira Earrings",
+            "price":"20,00",
+            "choice":true,
+            "new":true,
+            "color":["Gold","Silver"],
+            "size":["S","M","L"]
+
+        },
+        {
+            "id":7,
+            "img":"/public/images/halEarrings.png",
+            "title":"Hal Earrings",
+            "price":"25,00",
+            "choice":true,
+            "new":true,
+            "color":["Gold","Silver","Rose Gold"],
+            "size":["S","M","L"]
+
+        },
+        {
+            "id":8,
+            "img":"/public/images/kaedeHairPin.png",
+            "title":"Kaede Hair Pin Set Of 3",
+            "price":"30,00",
+            "choice":false,
+            "new":true,
+            "color":["Gold","Rose Gold"],
+            "size":["S","M","L"]
+
+        },
+        {
+            "id":9,
+            "img":"/public/images/hairPinSet.png",
+            "title":"Hair Pin Set Of 3",
+            "price":"30,00",
+            "choice":false,
+            "new":true,
+            "color":["Gold","Silver"],
+            "size":["S","M","L"]
+
+        },
+        {
+            "id":10,
+            "img":"/public/images/plaineNecklace.png",
+            "title":"Planine Necklace",
+            "price":"19,00",
+            "choice":true,
+            "new":false,
+            "color":["Gold","Silver","Rose Gold"],
+            "size":["S","M","L"]
+
+        },
+        {
+            "id":11,
+            "img":"/public/images/yukiHairPin.png",
+            "title":"Yuki Hair Pin Set of 3",
+            "price":"29,00",
+            "choice":false,
+            "new":false,
+            "color":["Gold","Silver","Rose Gold"],
+            "size":["S","M","L"]
+
+        }
+    ]
+}

@@ -1,0 +1,454 @@
+#wrapper {
+  display: block;
+  width: 1248px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+#header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 42px;
+  margin: 64px 0 0;
+  padding: 0 0 16px;
+  /* border-bottom: 1px solid #d8d8d8; */
+}
+#headr::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #D8D8D8;
+}
+
+
+#logo {
+  width: 158px;
+  height: 42px;
+  line-height: 42px;
+  font-size: 35px;
+  color: #000;
+  font-family: "Allerta Stencil", sans-serif;
+  cursor: pointer;
+}
+#logo span {
+  font-family: "Allerta Stencil", sans-serif;
+  color: #A18A68;
+}
+
+#nav {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  height: 42px;
+}
+.menu li {
+  position: relative;
+  height: 100%;
+  line-height: 42px;
+  font-size: 16px;
+  color: #000;
+  cursor: pointer;
+}
+.menu li:hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -16px;
+  display: inline-block;
+  width: 100%;  
+  height: 2px;
+  background: #000;
+}
+
+
+.rightShorcut {
+  display: flex;
+  align-items: center;
+  gap: 39px;
+}
+.rightShorcut::before {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 17px;
+  margin: 0 10px 0 49px;
+  background: #707070;
+}
+.rightShorcut li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.rightShorcut li input[type=text] {
+  width: 80px;
+  margin-left: 5px;
+  padding: 0 5px;
+  border: none;
+  border-bottom: 1px solid #000;
+  outline: 0;
+}
+
+/* main visual */
+#mainVisual {
+  position: relative;
+  height: 646px;
+  margin: 0 0 64px;
+  border-radius: 20px;
+}
+#mainVisual .mainVisual-info {
+  position: absolute;
+  left: 39px;
+  top: 226px;
+}
+#mainVisual .mainVisual-info .subject {
+  margin: 0 0 16px;
+  font-size: 33px;
+  font-weight: 500;
+  color: #fff;
+}
+#mainVisual .mainVisual-info .price {
+  margin: 0 0 48px;
+  font-size: 26px;
+  color: #fff;
+}
+#mainVisual .mainVisual-info .btn-viewProduct {
+  display: inline-block;
+  width: 193px;
+  height: 53px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  background: none;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+#mainVisual .mainVisual-info .btn-viewProduct:hover { 
+  color: #000;
+  background: #fff;
+}
+
+/* */
+#product-container {
+  display: block;
+}
+
+
+/* */
+.subTop-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 39px;
+}
+.subTop-title h2 {
+  font-size: 33px;
+  font-weight: 500;
+  color: #000;
+}
+.subTop-title .viewAll {
+  font-size: 20px;
+  font-weight: 600;
+  color: #A18A68
+}
+
+
+.product-list ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 54px
+}
+.product-list ul li {
+  position: relative;
+  width: 380px;
+  height: 558px;
+  cursor: pointer;
+}
+.product-list ul li .choice {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  display: inline-block;
+  height: 24px;
+  line-height: 24px;
+  padding: 0 8px;
+  font-size: 12px;
+  color: #fff;
+  background: #A18A68;
+  border-radius: 4px;
+}
+.product-list ul li .new {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  display: inline-block;
+  height: 24px;
+  line-height: 24px;
+  padding: 0 8px;
+  font-size: 12px;
+  color: #000;
+  background: #fff;
+  border-radius: 4px;
+}
+.product-list ul li .subject {
+  font-size: 20px;
+  color: #000;
+}
+.product-list ul li .price {
+  margin: 16px 0 0;
+  font-size: 20px;
+  color: #A18A68;
+}
+.product-list ul li img {
+  width: 380px;
+  height: 380px;
+  margin: 0 0 24px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.product-list ul li .addToCart {
+  position: absolute;
+  left: 0;
+  top: 316px;
+  display: none;
+  width: 100%;
+  height: 65px;
+  line-height: 65px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  text-align: center;
+  text-transform: uppercase;
+  background: rgba(255,255,255,0.5);
+  border: none;
+  outline: 0;
+}
+.product-list ul li:hover .addToCart {
+  display: block;
+}
+
+
+/* Login */
+#sub-container {
+  border-top: 1px solid #d8d8d8;
+}
+.signIn-container {
+  width: 500px;
+  height: 621px;
+  margin: 128px auto 0;
+}
+
+.login-title {
+  margin: 0 0 64px;
+  font-size: 33px;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+}
+
+.signInUp-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  margin: 0 0 126px;
+  padding: 5px;
+  background: #efefef;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+.signInUp-wrapper li {
+  width: 50%;
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  text-align: center;
+}
+.signInUp-wrapper li.selected {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 1px 1px 4px rgba(0,0,0,.1);
+}
+
+
+.input-wrapper {
+  margin: 0 0 15px;
+}
+.input-wrapper li {
+  height: 39px;
+  border-bottom: 1px solid #ddd;
+}
+.input-wrapper li:first-child {
+  margin: 0 0 46px;
+}
+.input-wrapper li input {
+  width: 100%;
+  height: 27px;
+  font-size: 16px;  
+  border: none;
+  outline: 0;
+}
+.input-wrapper li input::placeholder {
+  color: #707070;
+}
+
+.remember-checkbox {
+  display: flex;
+  align-items: center;
+  margin: 0 0 69px;
+}
+.remember-checkbox input[type=checkbox] {
+  display: inline-block;
+  vertical-align: middle;
+}
+.remember-checkbox label {
+  display: inline-block;
+  margin: 0 0 0 8px;
+  font-size: 16px;
+  color: #000;
+  vertical-align: middle;
+}
+
+.btn-signIn {
+  display: block;
+  width: 100%;
+  height: 53px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background: #000;
+  border-radius: 4px;
+}
+.btn-forgot {
+  display: block;
+  line-height: 27px;
+  margin: 13px 0 0;
+  font-size: 16px;
+  color: #000;
+  text-align: center;
+}
+
+
+/* product Detail */
+.productDetail-container {
+  display: flex;
+  justify-content: space-between;  
+  width: 1248px;
+  margin: 128px auto 0;
+}
+.productDetail-container .product-img img {
+  width: 700px;
+}
+
+.productDetail-container .product-info {
+  width: 486px;
+}
+
+.productDetail-container .product-info .choice {
+  display: inline-block;
+  height: 24px;
+  line-height: 24px;
+  margin: 0 10px 20px 0;
+  padding: 0 8px;
+  font-size: 12px;
+  color: #fff;
+  background: #A18A68;
+  border-radius: 4px;
+}
+.productDetail-container .product-info .new {
+  display: inline-block;
+  height: 24px;
+  line-height: 24px;
+  margin: 0 0 20px 0;
+  padding: 0 8px;
+  font-size: 12px;
+  color: #fff;
+  background: #000;
+  border-radius: 4px;
+}
+
+.productDetail-container .product-info .subject {
+  margin: 0 0 23px;
+  font-size: 26px;
+  color: #000;
+}
+.productDetail-container .product-info .price {
+  font-size: 20px;
+  color: #A18A68
+}
+.productDetail-container .product-info .color {
+  margin: 16px 0 30px;
+  font-size: 16px;
+  color: #000;
+}
+.productDetail-container .product-info select {
+  display: block;
+  width: 150px;
+  height: 35px;  
+  line-height: 35px;
+  margin: 30px 0 0;
+  border: 1px solid #000;
+  border-radius: 4px;
+  outline: 0;
+}
+.productDetail-container .product-info .btn-cart {
+  display: block;
+  width: 100%;
+  height: 51px;
+  margin: 130px 0 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 4px;
+}
+.productDetail-container .product-info .btn-cart:hover {
+  color: #fff;
+  background: #000;
+}
+
+.productDetail-container .product-info .sns-list {
+  display: flex;
+  align-items: center;  
+  margin: 80px 0 40px;
+}
+.productDetail-container .product-info .sns-list li {
+  height: 18px;
+  margin: 0 12px;
+  color: #979797;
+  cursor: pointer;
+}
+.productDetail-container .product-info .sns-list li:hover {
+  color: #000;
+}
+.productDetail-container .product-info .sns-list li.heart {
+  padding: 0 39px 0 0;
+  margin: 0 39px 0 0;
+  border-right: 1px solid #979797;
+}
+
+.productDetail-container .product-info .info-list li  {
+  margin: 0 0 10px;
+  font-size: 16px;
+  color: #000;
+}
+.productDetail-container .product-info .info-list li span {
+  display: inline-block;
+  margin: 0 0 0 12px;
+  color: #707070;
+}
